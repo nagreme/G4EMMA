@@ -54,7 +54,7 @@ class G4Polyhedra;
 ///
 ///  The cylinders have equal width, & their lengths are a linear equation.
 ///  They are spaced an equal distance apart, starting from given location.
-
+///  Deals with the wires in the PCAG ioin drift chamber. 
 class PGACWireParameterisation : public G4VPVParameterisation
 { 
   public:

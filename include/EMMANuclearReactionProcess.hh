@@ -21,6 +21,10 @@
 class G4ParticleDefinition;
 class G4CrossSectionDataStore;
 
+
+/// Nuclear-reaction process for projectile (Z1,A1) 
+/// striking target (Z2,A2) with cross section (cs)
+/// - Oliver Kirsebom, TRIUMF, February 2013
 class EMMANuclearReactionProcess : public G4HadronicProcess
 {
 public:

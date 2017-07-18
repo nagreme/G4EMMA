@@ -54,7 +54,9 @@ class G4Event;
 class G4ParticleDefinition;
 class EMMAPrimaryGeneratorMessenger;
 
-
+/// This is an important class responsible for primary particle or vertex generation. It is required by G4; the 
+/// Primary Generator is not an actual physical component of EMMA but rather a G4 construction element. 
+/// This class is the concrete class stemming from the virtual class found in "G4VUserPrimaryGeneratorAction.hh."  
 class EMMAPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
 

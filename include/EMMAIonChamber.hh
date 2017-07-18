@@ -48,6 +48,7 @@ class G4HCofThisEvent;
 /// The values are accounted in hits in ProcessHits() function which is called
 /// by Geant4 kernel at each step.
 
+/// Uses the inherited G4 detector construction classes to build the operation of the ion chamber. 
 class EMMAIonChamber : public G4VSensitiveDetector
 {
   public:

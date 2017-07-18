@@ -45,6 +45,9 @@
 #include "G4eBremsstrahlung.hh"
 #include "G4eplusAnnihilation.hh"
 
+
+/// The G4 header "G4VPhysicsConstructor.hh" contains a virtual class that must be used to create concrete classes for specific applications (such as EMMA).
+/// The current header builds such a concrete class to include EMMA's specific particles and processes. Specifically, this header defines particles and processes required to simulate EM interactions.
 class EMMAEMPhysics : public G4VPhysicsConstructor
 {
   public:

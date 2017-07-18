@@ -33,7 +33,9 @@
 #include "globals.hh"
 
 
-
+/// EMMA's specific objects and particles are registered from the virtual class in "G4VPhysicsConstructor.hh." 
+/// These objects are registered to G4UserPhysicsList, which is the parent of "G4VModularPhysicsList.hh." 
+/// The current header defines a concrete class inherited from "G4VModularPhysicsList.hh" 
 class EMMAPhysicsList: public G4VModularPhysicsList
 {
 public:

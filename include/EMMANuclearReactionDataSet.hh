@@ -22,6 +22,7 @@
 #include "G4Element.hh"
 
 
+/// Data set for (two body) nuclear reaction cross sections. Inherited from similar G4 headers. 
 class EMMANuclearReactionDataSet : public G4VCrossSectionDataSet
 {
 public:

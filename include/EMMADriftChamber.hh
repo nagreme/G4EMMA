@@ -39,14 +39,33 @@ class EMMADriftChamber : public G4VSensitiveDetector
 {
 
   public:
+  
+	//! Constructor.
+	
       EMMADriftChamber(G4String name);
+	  
+	//! Destructor
+	
       virtual ~EMMADriftChamber();
 
+	//! Method Initialize, which doesn't return anything, 
+	//! takes in one input of type G4HCofThisEvent*HCE
+	//! Method ProcessHits, which returns a G4bool,
+	//! takes in two inputs of type G4Step*aStep and G4TouchableHistory*ROhist
+	//! Method EndOfEvent, which doesn't return anything,
+	//! takes in one input of type G4HCofThisEvent*HCE,
+	//! and ends the event (it doesn't do anything)
+	
       virtual void Initialize(G4HCofThisEvent*HCE);
       virtual G4bool ProcessHits(G4Step*aStep,G4TouchableHistory*ROhist);
       virtual void EndOfEvent(G4HCofThisEvent*HCE);
 
   private:
+  
+	//! hitsCollection is an instance of the
+	//! EMMADriftChamberHitsCollection object
+	//! also declares private variable HCID of type G4int
+	
       EMMADriftChamberHitsCollection * hitsCollection;
       G4int HCID;
 };

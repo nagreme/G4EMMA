@@ -79,6 +79,10 @@ extern G4double electricScaling;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
+
+/// Headers that have to do with "stepping" (loops) is related to tracking the particle and its interactions with its surroundings. 
+/// This class defines functions that build on "G4UserSteppingAction.hh," which represents user actions during "stepping." 
+/// For more understanding of "stepping" (and consequently particle tracking) see the most fundamental "G$SteppingManager.hh" file. 
 class EMMASteppingAction : public G4UserSteppingAction
 {
 public:

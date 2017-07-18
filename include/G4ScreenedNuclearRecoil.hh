@@ -32,22 +32,22 @@
 //
 //
 //
-// Class Description
-// Process for screened electromagnetic nuclear elastic scattering; 
-// Physics comes from:
-// Marcus H. Mendenhall and Robert A. Weller, 
-// "Algorithms  for  the rapid  computation  of  classical  cross  sections  
-// for  screened  Coulomb  collisions  "
-// Nuclear  Instruments  and  Methods  in  Physics  Research  B58  (1991)  11-17  
-// The only input required is a screening function phi(r/a) which is the ratio
-// of the actual interatomic potential for two atoms with atomic numbers Z1 and Z2,
-// to the unscreened potential Z1*Z2*e^2/r where e^2 is elm_coupling in Geant4 units
-// the actual screening tables are computed externally in a python module "screened_scattering.py"
-// to allow very specific screening functions to be added if desired, without messing
-// with the insides of this code.
+/// Class Description
+/// Process for screened electromagnetic nuclear elastic scattering; 
+/// Physics comes from:
+/// Marcus H. Mendenhall and Robert A. Weller, 
+/// "Algorithms  for  the rapid  computation  of  classical  cross  sections  
+/// for  screened  Coulomb  collisions  "
+/// Nuclear  Instruments  and  Methods  in  Physics  Research  B58  (1991)  11-17  
+/// The only input required is a screening function phi(r/a) which is the ratio
+/// of the actual interatomic potential for two atoms with atomic numbers Z1 and Z2,
+/// to the unscreened potential Z1*Z2*e^2/r where e^2 is elm_coupling in Geant4 units
+/// the actual screening tables are computed externally in a python module "screened_scattering.py"
+/// to allow very specific screening functions to be added if desired, without messing
+/// with the insides of this code.
 //
-// First version, April 2004, Marcus H. Mendenhall, Vanderbilt University
-// May 1, 2008 -- Added code to allow process to have zero cross section above max energy, to coordinate with G4MSC.  -- mhm
+/// First version, April 2004, Marcus H. Mendenhall, Vanderbilt University
+/// May 1, 2008 -- Added code to allow process to have zero cross section above max energy, to coordinate with G4MSC.  -- mhm
 //
 // Class Description - End
 

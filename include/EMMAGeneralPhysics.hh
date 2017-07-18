@@ -37,6 +37,9 @@
 
 class F04StepMax;
 
+
+/// The G4 header "G4VPhysicsConstructor.hh" contains a virtual class that must be used to create concrete classes for specific applications (such as EMMA).
+/// The current header builds such a concrete class to include EMMA's specific particles and processes. Specifically, this header defines particles and processes required to simulate general physical interactions ("general" as in not hadron, muon, EM, or ion interactions).
 class EMMAGeneralPhysics : public G4VPhysicsConstructor
 {
   public:
@@ -46,7 +49,7 @@ class EMMAGeneralPhysics : public G4VPhysicsConstructor
 	void SetStepMax(G4double);
     F04StepMax* GetStepMaxProcess();
     void AddStepMax();
-	
+
   public:
     // This method will be invoked in the Construct() method.
     // each particle type will be instantiated
@@ -57,12 +60,12 @@ class EMMAGeneralPhysics : public G4VPhysicsConstructor
     // registered to the process manager of each particle type
 	virtual void ConstructProcess();
 
-	
+
 private:
-	
+
     G4double MaxChargedStep;
     F04StepMax* stepMaxProcess;
-	
+
 };
 
 

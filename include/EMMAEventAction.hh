@@ -50,6 +50,9 @@
 
 class EMMAEventActionMessenger;
 
+
+/// This header defines the user's action class, and specifically, the beginning and end of a user action. 
+/// It generates from the PrimaryGenerator headers as the user begins an action. Contains functions that are invoked by G4EventManager.
 class EMMAEventAction : public G4UserEventAction
 {
   public:

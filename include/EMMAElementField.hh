@@ -45,7 +45,7 @@
 //  This is the interface class used by GlobalField to compute the field
 //  value at a given point[].
 
-//  An element that represents an element with an EM field will
+//  An element with an EM field will
 //  derive a class from this one and implement the computation for the
 //  element. The Construct() function will add the derived object into
 //  GlobalField.
