@@ -15,7 +15,7 @@ CMakeFiles/EMMAapp.dir/EMMAapp.cc.o
  ../include/EMMASteppingVerbose.hh
  ../include/StackingAction.hh
  ../include/TrackingAction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/EMMAapp.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/EMMAapp.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Plane3D.h
@@ -433,8 +433,8 @@ CMakeFiles/EMMAapp.dir/EMMAapp.cc.o
 CMakeFiles/EMMAapp.dir/src/BGField1.cc.o
  ../include/BGField1.hh
  ../include/EMMAElementField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField1.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField1.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -538,8 +538,8 @@ CMakeFiles/EMMAapp.dir/src/BGField2.cc.o
  ../include/BGField2.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField2.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField2.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -663,8 +663,8 @@ CMakeFiles/EMMAapp.dir/src/BGField3.cc.o
  ../include/BGField3.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField3.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField3.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -789,8 +789,8 @@ CMakeFiles/EMMAapp.dir/src/BGField4.cc.o
  ../include/BGField4.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField4.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField4.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -914,8 +914,8 @@ CMakeFiles/EMMAapp.dir/src/BGField5.cc.o
  ../include/BGField5.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField5.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField5.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -1040,8 +1040,8 @@ CMakeFiles/EMMAapp.dir/src/BGField6.cc.o
  ../include/BGField6.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField6.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField6.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -1165,8 +1165,8 @@ CMakeFiles/EMMAapp.dir/src/BGField7.cc.o
  ../include/BGField7.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/BGField7.cc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/fortran_subs.inc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/BGField7.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/fortran_subs.inc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -1291,7 +1291,7 @@ CMakeFiles/EMMAapp.dir/src/EMFieldDebugger.cc.o
  ../include/EMMADetectorConstruction.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMFieldDebugger.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMFieldDebugger.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -1414,7 +1414,7 @@ CMakeFiles/EMMAapp.dir/src/EMFieldDebugger.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMAAnalysisManager.cc.o
  ../include/EMMAAnalysisManager.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAAnalysisManager.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAAnalysisManager.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -1587,7 +1587,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAAnalysisManager.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMADetectorConstMessenger.cc.o
  ../include/EMMADetectorConstMessenger.hh
  ../include/EMMADetectorConstruction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMADetectorConstMessenger.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMADetectorConstMessenger.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -1640,7 +1640,7 @@ CMakeFiles/EMMAapp.dir/src/EMMADetectorConstruction.cc.o
  ../include/EMMAIonChamber.hh
  ../include/EMMAIonChamberHit.hh
  ../include/SpectrometerConstruction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMADetectorConstruction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMADetectorConstruction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -1942,7 +1942,7 @@ CMakeFiles/EMMAapp.dir/src/EMMADetectorConstruction.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamber.cc.o
  ../include/EMMADriftChamber.hh
  ../include/EMMADriftChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMADriftChamber.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMADriftChamber.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -2089,7 +2089,7 @@ CMakeFiles/EMMAapp.dir/src/EMMADriftChamber.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o
  ../include/EMMADriftChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMADriftChamberHit.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMADriftChamberHit.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -2235,7 +2235,7 @@ CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMAEMPhysics.cc.o
  ../include/EMMAEMPhysics.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAEMPhysics.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAEMPhysics.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -2468,7 +2468,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAEMPhysics.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMAElementField.cc.o
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAElementField.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAElementField.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -2595,7 +2595,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAEventAction.cc.o
  ../include/EMMAEventActionMessenger.hh
  ../include/EMMAIonChamber.hh
  ../include/EMMAIonChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAEventAction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAEventAction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -2913,7 +2913,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAEventActionMessenger.cc.o
  ../include/EMMAEventActionMessenger.hh
  ../include/EMMAIonChamber.hh
  ../include/EMMAIonChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAEventActionMessenger.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAEventActionMessenger.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -3099,7 +3099,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAEventActionMessenger.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMAGeneralPhysics.cc.o
  ../include/EMMAGeneralPhysics.hh
  ../include/F04StepMax.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAGeneralPhysics.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAGeneralPhysics.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -3270,7 +3270,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAGlobalField.cc.o
  ../include/EMMADetectorConstruction.hh
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAGlobalField.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAGlobalField.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -3443,7 +3443,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAGlobalField.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMAHadronPhysics.cc.o
  ../include/EMMAHadronPhysics.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAHadronPhysics.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAHadronPhysics.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -3883,7 +3883,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAHadronPhysics.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMAIonChamber.cc.o
  ../include/EMMAIonChamber.hh
  ../include/EMMAIonChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAIonChamber.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAIonChamber.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -3992,7 +3992,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAIonChamber.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMAIonChamberHit.cc.o
  ../include/EMMAIonChamberHit.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAIonChamberHit.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAIonChamberHit.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -4057,7 +4057,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAIonPhysics.cc.o
  ../include/G4ScreenedNuclearRecoil.hh
  ../include/c2_function.hh
  ../include/c2_function.icc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAIonPhysics.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAIonPhysics.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -4462,7 +4462,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAIonPhysicsMessenger.cc.o
  ../include/EMMANuclearReactionDataSet.hh
  ../include/EMMANuclearReactionProcess.hh
  ../include/EMMANuclearReactionTwoBody.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAIonPhysicsMessenger.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAIonPhysicsMessenger.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -4831,7 +4831,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAIonPhysicsMessenger.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMAMuonPhysics.cc.o
  ../include/EMMAMuonPhysics.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAMuonPhysics.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAMuonPhysics.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -5059,7 +5059,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAMuonPhysics.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMANuclearReactionDataSet.cc.o
  ../include/EMMANuclearReactionDataSet.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMANuclearReactionDataSet.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMANuclearReactionDataSet.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -5210,7 +5210,7 @@ CMakeFiles/EMMAapp.dir/src/EMMANuclearReactionProcess.cc.o
  ../include/EMMANuclearReactionDataSet.hh
  ../include/EMMANuclearReactionProcess.hh
  ../include/EMMANuclearReactionTwoBody.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMANuclearReactionProcess.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMANuclearReactionProcess.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -5493,7 +5493,7 @@ CMakeFiles/EMMAapp.dir/src/EMMANuclearReactionProcess.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/EMMANuclearReactionTwoBody.cc.o
  ../include/EMMANuclearReactionTwoBody.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMANuclearReactionTwoBody.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMANuclearReactionTwoBody.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -5764,7 +5764,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAPhysicsList.cc.o
  ../include/EMMANuclearReactionProcess.hh
  ../include/EMMANuclearReactionTwoBody.hh
  ../include/EMMAPhysicsList.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAPhysicsList.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAPhysicsList.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -6224,7 +6224,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAPhysicsList.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMAPrimaryGeneratorAction.cc.o
  ../include/EMMAPrimaryGeneratorAction.hh
  ../include/EMMAPrimaryGeneratorMessenger.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAPrimaryGeneratorAction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAPrimaryGeneratorAction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -6567,7 +6567,7 @@ CMakeFiles/EMMAapp.dir/src/EMMAPrimaryGeneratorAction.cc.o
 CMakeFiles/EMMAapp.dir/src/EMMAPrimaryGeneratorMessenger.cc.o
  ../include/EMMAPrimaryGeneratorAction.hh
  ../include/EMMAPrimaryGeneratorMessenger.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMAPrimaryGeneratorMessenger.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAPrimaryGeneratorMessenger.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -6659,7 +6659,7 @@ CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
  ../include/EMMASteppingAction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMASteppingAction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMASteppingAction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -7083,7 +7083,7 @@ CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o
  /opt/root-cern/root_v5.34-build/include/strlcpy.h
 CMakeFiles/EMMAapp.dir/src/EMMASteppingVerbose.cc.o
  ../include/EMMASteppingVerbose.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/EMMASteppingVerbose.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMASteppingVerbose.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -7277,7 +7277,7 @@ CMakeFiles/EMMAapp.dir/src/EMMASteppingVerbose.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/F04StepMax.cc.o
  ../include/F04StepMax.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/F04StepMax.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/F04StepMax.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -7420,7 +7420,7 @@ CMakeFiles/EMMAapp.dir/src/F04StepMax.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/G4LindhardPartition.cc.o
  ../include/G4LindhardPartition.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/G4LindhardPartition.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/G4LindhardPartition.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/G4Allocator.hh
@@ -7462,7 +7462,7 @@ CMakeFiles/EMMAapp.dir/src/G4ScreenedNuclearRecoil.cc.o
  ../include/c2_factory.hh
  ../include/c2_function.hh
  ../include/c2_function.icc
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/G4ScreenedNuclearRecoil.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/G4ScreenedNuclearRecoil.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/MTwistEngine.h
@@ -7730,7 +7730,7 @@ CMakeFiles/EMMAapp.dir/src/SpectrometerConstruction.cc.o
  ../include/EMMAElementField.hh
  ../include/EMMAGlobalField.hh
  ../include/SpectrometerConstruction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/SpectrometerConstruction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/SpectrometerConstruction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Point3D.h
@@ -7902,7 +7902,7 @@ CMakeFiles/EMMAapp.dir/src/SpectrometerConstruction.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/StackingAction.cc.o
  ../include/StackingAction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/StackingAction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/StackingAction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -7990,7 +7990,7 @@ CMakeFiles/EMMAapp.dir/src/StackingAction.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/TrackingAction.cc.o
  ../include/TrackingAction.hh
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/TrackingAction.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/TrackingAction.cc
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Utility/defs.h
@@ -8077,4 +8077,4 @@ CMakeFiles/EMMAapp.dir/src/TrackingAction.cc.o
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/globals.hh
  /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 CMakeFiles/EMMAapp.dir/src/mitray.cc.o
- /mnt/c/GitHub/G4EMMA - g4emmaStudent account/G4EMMA/src/mitray.cc
+ /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/mitray.cc
