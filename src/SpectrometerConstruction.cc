@@ -191,7 +191,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
     //
     // The construction of the upstream end cap is a cylinder (Pipe1Cap1) exactly like Pipe1Wall, with a disk (Pipe1Cap2) on the end capping it.
     // The construction of the downstream (Pipe1Cap3) end cap is a disk with hole in it to allow the particles to pass through.
-    // The caps are just walls.
+    // The caps are just walls like the rest of the walls.
     //
     //
     //
@@ -212,8 +212,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4LogicalVolume* Pipe1Cap3Logical = new G4LogicalVolume(Pipe1Cap3Solid,Wall,"Pipe1Cap3Logical", 0,0,0);
 	G4double Pipe1Cap3z = zQ1begins+0.5*cm;
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Pipe1Cap3z),Pipe1Cap3Logical,"Pipe1Cap3Physical",SpecWorldLogical,0,0,fCheckOverlaps);
-    //
-    //
+	//
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
 
 

@@ -54,7 +54,7 @@
 ///
 ///  There is a single G04GlobalField object.
 ///
-///  The field from each individual beamline element is given by a
+///  The field from each individual beamline element (quad, ED, etc.) is given by a
 ///  ElementField object. Any number of overlapping ElementField
 ///  objects can be added to the global field. Any element that
 ///  represents an element with an EM field must add the appropriate

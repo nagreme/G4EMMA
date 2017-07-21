@@ -25,8 +25,12 @@
 //
 /// \file field/field04/src/F04ElementField.cc
 /// \brief Implementation of the F04ElementField class
+///
+/// This file adds the EM fields of individual elements (ex. the Quad or ED) to the GlobalField.
+/// GlobalField uses ElementField to compute fields at individual points.
 
 //  This class was copied from the extended example F04
+
 
 //
 //

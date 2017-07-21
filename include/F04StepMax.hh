@@ -40,8 +40,8 @@
 #include "G4ParticleDefinition.hh"
 
 
-/// Header defines a class including functions relating to the step (tracking) of a particle involved in a discrete process. 
-/// For more general information see this header's dependencies. 
+/// Header defines a class relating to the step (tracking) of a particle involved in a discrete process.
+/// For more general information see this header's dependencies.
 class F04StepMax : public G4VDiscreteProcess
 {
   public:
@@ -73,7 +73,7 @@ class F04StepMax : public G4VDiscreteProcess
     F04StepMax & operator=(const F04StepMax &right);
     F04StepMax(const F04StepMax&);
 
-  private: 
+  private:
     G4double MaxChargedStep;
 
 };

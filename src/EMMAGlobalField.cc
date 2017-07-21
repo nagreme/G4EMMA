@@ -26,6 +26,16 @@
 /// \file field/field04/src/F04GlobalField.cc
 /// \brief Implementation of the F04GlobalField class
 //
+
+///  F04GlobalField - handles the global ElectroMagnetic field
+///
+///  There is a single G04GlobalField object.
+///
+///  The field from each individual beamline element (quad, ED, etc.) is given by a
+///  ElementField object. Any number of overlapping ElementField
+///  objects can be added to the global field. Any element that
+///  with an EM field must add the appropriate
+///  ElementField to the global GlobalField object.
 //
 #include <time.h>
 
@@ -217,7 +227,7 @@ G4FieldManager* EMMAGlobalField::GetGlobalFieldManager()
 void EMMAGlobalField::GetFieldValue(const G4double* point, G4double* field) const
 {
   // NOTE: this routine dominates the CPU time for tracking.
-  // Using the simple array fFp[] instead of fields[] 
+  // Using the simple array fFp[] instead of fields[]
   // directly sped it up
 
   field[0] = field[1] = field[2] = field[3] = field[4] = field[5] = 0.0;
