@@ -28,7 +28,7 @@
 //
 // 22-Nov-2004 Construt ALL Particles by T. Koi
 
-
+/// Defines all particles and builds decay and stepping processes.
 #include "EMMAGeneralPhysics.hh"
 
 #include "G4SystemOfUnits.hh"
@@ -59,8 +59,8 @@ EMMAGeneralPhysics::~EMMAGeneralPhysics()
 
 void EMMAGeneralPhysics::ConstructParticle()
 {
-   // In Alphabetical Order 
-   
+   // In Alphabetical Order
+
    //  Construct all barions
    G4BaryonConstructor* baryonConstructor = new G4BaryonConstructor();
    baryonConstructor -> ConstructParticle();
@@ -71,12 +71,12 @@ void EMMAGeneralPhysics::ConstructParticle()
    bosonConstructor -> ConstructParticle();
    delete bosonConstructor;
 
-   // Construct all ions 
+   // Construct all ions
    G4IonConstructor* ionConstructor = new G4IonConstructor();
    ionConstructor -> ConstructParticle();
    delete ionConstructor;
 
-   // Construct all leptons 
+   // Construct all leptons
    G4LeptonConstructor* leptonConstructor = new G4LeptonConstructor();
    leptonConstructor -> ConstructParticle();
    delete leptonConstructor;
@@ -90,7 +90,7 @@ void EMMAGeneralPhysics::ConstructParticle()
    G4ShortLivedConstructor* shortLivedConstructor = new G4ShortLivedConstructor();
    shortLivedConstructor -> ConstructParticle();
    delete shortLivedConstructor;
-   
+
 }
 
 #include "G4Decay.hh"
@@ -102,7 +102,7 @@ void EMMAGeneralPhysics::ConstructParticle()
 void EMMAGeneralPhysics::ConstructProcess()
 {
   // Add Decay Process
-   G4Decay* theDecayProcess = new G4Decay();  
+   G4Decay* theDecayProcess = new G4Decay();
   theParticleIterator->reset();
   while( (*theParticleIterator)() ){
     G4ParticleDefinition* particle = theParticleIterator->value();
@@ -135,16 +135,16 @@ void EMMAGeneralPhysics::AddStepMax()
 	// Step limitation seen as a process
 	//G4StepLimiter* stepLimiter = new G4StepLimiter();
 	////G4UserSpecialCuts* userCuts = new G4UserSpecialCuts();
-	
+
 	theParticleIterator->reset();
 	while ((*theParticleIterator)()){
 		G4ParticleDefinition* particle = theParticleIterator->value();
 		G4ProcessManager* pmanager = particle->GetProcessManager();
-		
+
 		if (stepMaxProcess->IsApplicable(*particle) && !particle->IsShortLived())
 		{
 			if (pmanager) pmanager -> AddDiscreteProcess(stepMaxProcess);
-		}		
+		}
 	}
 }
 

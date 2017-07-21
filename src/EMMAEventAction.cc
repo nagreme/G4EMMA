@@ -55,7 +55,10 @@ using namespace std;
 //global variable
 extern G4String UserDir;
 
-/// If you are getting error messages concerning this file while building EMMA it is likely an error or problem in your (CERN) ROOT installation, as this file calls upon ROOT functions. Reinstall or remake ROOT.
+/// Takes care of the interactions (events) of an object that was generated in the Primary Generator.
+///
+/// Note: If you are getting error messages concerning this file while building EMMA it is likely an error or problem in your (CERN) ROOT installation, as this file calls upon ROOT functions.
+/// Reinstall or remake ROOT.
 
 
 EMMAEventAction::EMMAEventAction()

@@ -44,7 +44,7 @@ class G4UIcmdWithoutParameter;
 /// derivative class if (s)he wishes to define commands (for EMMA).
 /// This file is responsible for deleting commands, delivering commands to destination classes, defining global G4 variables specific to EMMA,
 /// and replying the current values of the parameters (again as described the "G4UImessenger.hh" source file)
-/// This is one of four similar EMMA headers, each titled "EMMA...Messenger," which serves the same above purpose for different aspects of the EMMA simulation:
+/// This is one of four similar EMMA headers, each titled "EMMA...Messenger.hh," which serves the same above purpose for different aspects of the EMMA simulation:
 /// see "EMMADetectorConstMessenger," "EMMAEventActionMessenger," "EMMAIonPhysicsMessenger," and "EMMAPrimaryGeneratorMessenger."
 class EMMADetectorConstMessenger: public G4UImessenger
 {

@@ -9,6 +9,9 @@
 //
 //
 
+/// This source file builds the elements in the whole EMMA spectrometer apart from the detectors and fields.
+/// All the pipes, walls, and other geometries are built here. Refer to this file if any structural changes are required for the simulation.
+
 #include "SpectrometerConstruction.hh"
 
 #include "G4VSolid.hh"
@@ -115,8 +118,7 @@ SpectrometerConstruction::SpectrometerConstruction(){;}
 //If you change any logical names in the constructor of this class make sure you change
 //them in EMMASteppingAction.cc
 //************************************************************************************//
-/// This source file builds the elements in the whole EMMA spectrometer apart from the detectors and fields.
-/// All the pipes, walls, and other geometries are built here.
+
 
 
 SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Material* Wall, G4LogicalVolume* SpecWorldLogical,
@@ -183,7 +185,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
     //
     // Pipe1 end caps
     //
-    // This part is added to minimize the unwanted scattering of particles outside of the spectrometer (which slows down the simulation speed.
+    // This part is added to minimize the unwanted scattering of particles outside of the spectrometer (which slows down the simulation speed).
     // After hitting the target the recoils have a tendency to scatter out of the two ends of pipe1, where there are no walls.
     // This simply adds walls on either end of pipe1 so that scattering doesn't end up everywhere.
     //

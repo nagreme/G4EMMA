@@ -30,7 +30,7 @@
 // 09-Oct-2003 Change gamma, electron, positorn process T. Koi
 // 10-Jan-2004 Add Brems. of AlongStepDoIt for e+- T. Koi
 
-
+/// Defines EM physics process functions and particles.
 #include "EMMAEMPhysics.hh"
 
 #include "globals.hh"
@@ -75,7 +75,7 @@ void EMMAEMPhysics::ConstructProcess()
    G4VProcess* theeminusMultipleScattering = new G4eMultipleScattering();
    G4VProcess* theeminusIonisation         = new G4eIonisation();
    G4VProcess* theeminusBremsstrahlung     = new G4eBremsstrahlung();
-   // 
+   //
    //  add process
    pManager->AddProcess(theeminusMultipleScattering);
    pManager->AddProcess(theeminusIonisation);

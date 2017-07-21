@@ -69,7 +69,8 @@ class AIDA::IPlotter;*/
 
 class G4Track;
 
-/// This header calls opon several root files and declares other functions for a source file which calls upon and writes to ROOT files to display simulation outcomes or results. 
+/// This header calls upon several root files and declares other functions for a source file.
+/// These functions call upon and write to ROOT files to display simulation outcomes or results.
 class EMMAAnalysisManager {
 public:
 
