@@ -47,8 +47,13 @@ class G4AttDef;
 class G4AttValue;
 
 
-/// This class manages the hit object in regards to the drift chamber part of the simulation. It defines global variables and functions for the G4 code to run necessary hit simulations.
-/// The virtual methods draw() and print() are used. For further details about each part of this file examine the accompanying explanations adjacent to the classes.
+/*!
+ \file
+ \brief This class manages the hit object in regards to the drift chamber part of the simulation. It defines global variables and functions for the G4 code to run necessary hit simulations.
+ The virtual methods draw() and print() are used. For further details about each part of this file, examine the accompanying explanations adjacent to the classes.
+*/
+
+
 class EMMADriftChamberHit : public G4VHit
 {
 public:

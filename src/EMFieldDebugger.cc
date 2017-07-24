@@ -1,6 +1,10 @@
-/// Use this routine to calculate E and B fields at certain locations.
-/// It MUST be used after SpectrometerConstruction.cc is initialised since it assigns lengths and sizes
-/// of the elements needed to calculate the field strengths in the BGField classes.
+/*! \file
+ \brief Calculates E and B fields at certain locations.
+
+ It MUST be used after SpectrometerConstruction.cc is initialised since it assigns lengths and sizes
+ of the elements needed to calculate the field strengths in the BGField classes.
+*/
+
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

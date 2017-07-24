@@ -27,10 +27,12 @@
 // --------------------------------------------------------------
 //
 
-/// Generates the primary event (ie. the beam coming from the particle gun and reacting with the target),
-/// taking into account the information from the user input files (found in UserDir of your source folder).
-/// Look here if you want to modify this process, including its subclass ParticleGun, how the reaction is handled,
-/// or how the user input is handled.
+/*! \file
+ \brief Generates the primary event (ie. the beam coming from the particle gun and reacting with the target),
+    taking into account the information from the user input files (found in UserDir of your source folder).
+    Look here if you want to modify this process, including its subclass ParticleGun, how the reaction is handled,
+    or how the user input is handled.
+    */
 
 #include "EMMAPrimaryGeneratorAction.hh"
 #include "EMMAPrimaryGeneratorMessenger.hh"

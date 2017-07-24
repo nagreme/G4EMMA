@@ -23,8 +23,15 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm7/src/G4ScreenedNuclearRecoil.cc
-/// \brief Implementation of the G4ScreenedNuclearRecoil class
+///// \file electromagnetic/TestEm7/src/G4ScreenedNuclearRecoil.cc
+
+/*! \file
+ \brief Implementation of the G4ScreenedNuclearRecoil class
+ Process for screened electromagnetic nuclear elastic scattering;
+
+ See this file for more detailed in-body description and reference.
+ */
+
 //
 //
 // G4ScreenedNuclearRecoil.cc,v 1.57 2008/05/07 11:51:26 marcus Exp
@@ -32,15 +39,15 @@
 //
 //
 // Class Description
-/// Process for screened electromagnetic nuclear elastic scattering;
+// Process for screened electromagnetic nuclear elastic scattering;
 // Physics comes from:
 // Marcus H. Mendenhall and Robert A. Weller,
 // "Algorithms  for  the rapid  computation  of  classical  cross
 // sections  for  screened  Coulomb  collisions  "
 // Nuclear  Instruments  and  Methods  in  Physics  Research  B58  (1991)  11-17
-/// The only input required is a screening function phi(r/a) which is the ratio
-/// of the actual interatomic potential for two atoms with atomic numbers Z1 and Z2,
-/// to the unscreened potential Z1*Z2*e^2/r where e^2 is elm_coupling in Geant4 units
+// The only input required is a screening function phi(r/a) which is the ratio
+// of the actual interatomic potential for two atoms with atomic numbers Z1 and Z2,
+// to the unscreened potential Z1*Z2*e^2/r where e^2 is elm_coupling in Geant4 units
 //
 // First version, April 2004, Marcus H. Mendenhall, Vanderbilt University
 //

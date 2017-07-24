@@ -7,8 +7,12 @@
    (G4HadronElasticDataSet.cc used as starting point)
 */
 
-/// Class description:
-/// Very simple cross-section data set for nuclear-reaction process.
+
+/*! \file
+ \brief Very simple cross-section data set for nuclear-reaction process.
+ */
+
+
 
 
 

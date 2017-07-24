@@ -31,8 +31,12 @@
 //                                      to G4ionIonisation T. Koi
 
 
-/// Creates particles and processes for important ions: deuterium, tritium, Alphas, and He-3s; also builds generic ions.
-/// Also defines ion physics processes.
+/*! \file
+ \brief Creates particles and processes for important ions: deuterium, tritium, Alphas, and He-3s; also builds generic ions.
+ Also defines ion physics processes.
+ */
+
+
 #include "EMMAIonPhysics.hh"
 
 #include "globals.hh"

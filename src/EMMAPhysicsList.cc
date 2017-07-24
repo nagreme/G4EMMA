@@ -32,7 +32,11 @@
 //           All Particles are created in GeneralPhysics
 
 
-/// All other physics processes are written here.
+/*! \file
+ \brief All other physics processes (EM, general, muon, etc.) are written here.
+ */
+
+
 #include "EMMAPhysicsList.hh"
 
 #include "globals.hh"

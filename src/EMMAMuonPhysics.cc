@@ -30,7 +30,11 @@
 // 05-Jan-2004 Add Brem. and PairProd. of AlongStepDoit for mu+- by T. Koi
 
 
-/// Particle and process construction for muon +/- and tau +/- particles.
+/*! \file
+ \brief Particle and process construction for muon +/- and tau +/- particles.
+ */
+
+
 #include "EMMAMuonPhysics.hh"
 
 #include "globals.hh"

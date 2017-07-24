@@ -73,7 +73,11 @@ extern G4String fieldFileName;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-/// This header declares a class used in the corresponding source file that calculates the value of EM fields at different locations in the simulation. 
+/*!
+ \file
+ \brief This header declares a class used in the corresponding source file that calculates the value of EM fields at different locations in the simulation.
+*/
+
 class EMFieldDebugger
 {
 public:

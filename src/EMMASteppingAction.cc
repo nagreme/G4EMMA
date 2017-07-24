@@ -31,10 +31,14 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-/// Tracks the particle as it makes its way through the spectrometer.
-/// Ensures that the beam projectiles do not pass through the target.
-/// Writes beam information as it passes through target so a collision can be simulated.
-/// Records and writes the locations of (dead) hits to a ROOT histogram.
+/*! \file
+ \brief Tracks the particle as it makes its way through the spectrometer.
+ Ensures that the beam projectiles do not pass through the target.
+ Writes beam information as it passes through target so a collision can be simulated.
+ Records and writes the locations of (dead) hits to a ROOT histogram.
+ */
+
+
 
 #include "EMMASteppingAction.hh"
 #include "EMMAGlobalField.hh"

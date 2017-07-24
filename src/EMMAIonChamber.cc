@@ -25,11 +25,15 @@
 //
 // $Id$
 //
-/// \file B4cCalorimeterSD.cc
-/// \brief Implementation of the B4cCalorimeterSD class
+///// \file B4cCalorimeterSD.cc
 
-/// Builds the ion chamber and defines the types of data it outputs.
-/// Look here to modify the specific workings of the IC. (Look also in DetectorConstruction)
+
+/*! \file
+ \brief \brief Implementation of the B4cCalorimeterSD class
+ Builds the ion chamber and defines the types of data it outputs.
+ Look here to modify the specific workings of the IC. (Look also in DetectorConstruction)
+*/
+
 
 #include "EMMAIonChamber.hh"
 #include "G4HCofThisEvent.hh"

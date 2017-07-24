@@ -23,13 +23,17 @@ class BGField6;
 class BGField7;
 class EMMAGlobalField;
 
-/// Builds the EMMA spectrometer through defining classes and variables, including those for slit control.
-/// This header is built upon the virtual classes inherited from "G4VUserDetectorConstruction.hh." 
+/*! \file
+ \brief Builds the EMMA spectrometer through defining classes and variables, including those for slit control.
+   This header is built upon the virtual classes inherited from "G4VUserDetectorConstruction.hh."
+*/
+
+
 class SpectrometerConstruction
 {
 public:
   SpectrometerConstruction();
-  SpectrometerConstruction(G4Material*, G4Material*, G4LogicalVolume*, 
+  SpectrometerConstruction(G4Material*, G4Material*, G4LogicalVolume*,
   			G4double Pipe1length);
   virtual ~SpectrometerConstruction();
   //void FieldDebugger();
@@ -37,11 +41,11 @@ public:
   void ScaleFieldStrength( G4double msf, G4double esf ); // arguments are: msf='magnetic scale factor' and esf='electric scale factor'
   void ReadUserInput();
   void buildSlits( G4LogicalVolume* SpecWorldLogical,
-		   G4String nameSolid, G4String nameLogical, G4String namePhys, 
+		   G4String nameSolid, G4String nameLogical, G4String namePhys,
 		   G4double slitsThick, G4double angle, G4ThreeVector pos,
 		   G4bool insert_hSlits, G4double hAper);
   void buildSlitSingle( G4LogicalVolume* SpecWorldLogical,
-		   G4String nameSolid, G4String nameLogical, G4String namePhys, 
+		   G4String nameSolid, G4String nameLogical, G4String namePhys,
 		   G4double slitsThick, G4ThreeVector pos,
 		   G4bool insert_rSlits, G4double rAper,G4bool insert_lSlits, G4double lAper);
 
@@ -85,6 +89,6 @@ private:
   G4double lAperture4;
   G4bool  fCheckOverlaps; // option to activate checking of volumes overlaps
 
-  
+
 };
 #endif

@@ -27,16 +27,18 @@
 /// \brief Implementation of the F04GlobalField class
 //
 
-///  F04GlobalField - handles the global ElectroMagnetic field
-///
-///  There is a single G04GlobalField object.
-///
-///  The field from each individual beamline element (quad, ED, etc.) is given by a
-///  ElementField object. Any number of overlapping ElementField
-///  objects can be added to the global field. Any element that
-///  with an EM field must add the appropriate
-///  ElementField to the global GlobalField object.
-//
+/*! \file
+ \brief F04GlobalField - handles the global ElectroMagnetic field
+
+  The field from each individual beamline element (quad, ED, etc.) is given by a
+  ElementField object. Any number of overlapping ElementField
+  objects can be added to the global field. Any element
+  with an EM field must add the appropriate
+  ElementField to the global GlobalField object. There is a single G04GlobalField object.
+*/
+
+
+
 #include <time.h>
 
 #include "Randomize.hh"

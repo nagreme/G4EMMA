@@ -30,7 +30,9 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-/// Prints out the information obtained in SteppingAction (Hence verbose).
+/*! \file
+ \brief Prints out the information obtained in SteppingAction (Hence verbose).
+ */
 
 #include "EMMASteppingVerbose.hh"
 

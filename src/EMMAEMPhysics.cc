@@ -30,7 +30,11 @@
 // 09-Oct-2003 Change gamma, electron, positorn process T. Koi
 // 10-Jan-2004 Add Brems. of AlongStepDoIt for e+- T. Koi
 
-/// Defines EM physics process functions and particles.
+/*! \file
+ \brief Defines EM physics process functions and particles.
+ */
+
+
 #include "EMMAEMPhysics.hh"
 
 #include "globals.hh"

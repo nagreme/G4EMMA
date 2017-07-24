@@ -9,8 +9,11 @@
 //
 //
 
-/// This source file builds the elements in the whole EMMA spectrometer apart from the detectors and fields.
-/// All the pipes, walls, and other geometries are built here. Refer to this file if any structural changes are required for the simulation.
+/*! \file
+ \brief
+  This source file builds the elements in the whole EMMA spectrometer apart from the detectors and fields.
+  All the pipes, walls, and other geometries are built here. Refer to this file if any structural changes are required for the simulation.
+  */
 
 #include "SpectrometerConstruction.hh"
 

@@ -27,7 +27,11 @@
 // --------------------------------------------------------------
 //
 
-/// Builds the specific operation of the PGAC drift chamber and the taking of the results.
+/*! \file
+ \brief Builds the specific operation of the PGAC drift chamber and the taking of the results.
+ */
+
+
 #include "EMMADriftChamber.hh"
 #include "EMMADriftChamberHit.hh"
 #include "G4HCofThisEvent.hh"

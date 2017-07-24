@@ -9,11 +9,12 @@
 */
 
 
-/// Class description:
-/// Nuclear-reaction process for projectile (Z1,A1)
-/// striking target (Z2,A2) with cross section (cs).
-///
-/// Look here if you need to alter the process of striking target with beam.
+
+/*! \file
+ \brief Nuclear-reaction process for projectile (Z1,A1)
+  striking target (Z2,A2) with cross section (cs).
+  Look here if you need to alter the process of striking target with beam.
+  */
 
 
 #include <iostream>

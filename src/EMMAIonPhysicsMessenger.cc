@@ -5,7 +5,9 @@
 #include "G4UIcmdWithABool.hh"
 #include "G4ios.hh"
 
-/// Connects and delivers user commands regarding ion physics particles and processes to respective classes, and relays their responses to the user.
+/*! \file
+ \brief Connects and delivers user commands regarding ion physics particles and processes to respective classes, and relays their responses to the user.
+ */
 
 EMMAIonPhysicsMessenger::EMMAIonPhysicsMessenger(EMMAIonPhysics * ionphys)
 :fTarget(ionphys)

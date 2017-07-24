@@ -25,10 +25,13 @@
 //
 // $Id$
 //
-/// \file B4cCalorHit.cc
-/// \brief Implementation of the B4cCalorHit class
+///// \file B4cCalorHit.cc
 
-/// Prints and outputs the results of a particle hit in the ion chamber.
+/*! \file
+ \brief Implementation of the B4cCalorHit class. Prints and outputs the results of a particle hit in the ion chamber.
+ */
+
+
 
 #include "EMMAIonChamberHit.hh"
 #include "G4UnitsTable.hh"

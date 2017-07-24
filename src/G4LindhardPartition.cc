@@ -28,8 +28,12 @@
 //
 // $Id$
 //
-/// A seemingly periphery code that calculates the non-ionizing energy loss of radiation via the Lindhard partition function.
-/// Used to calculate energy deposited in target by the beam thereby affecting energy of recoils.
+/*! \file
+ \brief A seemingly periphery code that calculates the non-ionizing energy loss of radiation via the Lindhard partition function.
+    Used to calculate energy deposited in target by the beam thereby affecting energy of recoils.
+    */
+
+
 /*
  *  G4LindhardPartition.cc
  *

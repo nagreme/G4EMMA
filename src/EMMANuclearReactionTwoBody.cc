@@ -27,8 +27,11 @@
 #include "G4Gamma.hh"
 #include "G4NucleiProperties.hh"
 
-/// Nuclear-reaction model for two-body final-state (Z3,A3)+(Z4,A4) after target is hit with projectile.
-/// If changes need to be made, check also EMMANuclearReactionProcess.cc.
+/*! \file
+ \brief Nuclear-reaction model for two-body final-state (Z3,A3)+(Z4,A4) after target is hit with projectile.
+  If changes need to be made, check also EMMANuclearReactionProcess.cc.
+  */
+
 
 EMMANuclearReactionTwoBody::EMMANuclearReactionTwoBody(const G4String& name
 						       , G4double Z3, G4double A3

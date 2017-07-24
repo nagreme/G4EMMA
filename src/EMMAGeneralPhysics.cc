@@ -28,7 +28,11 @@
 //
 // 22-Nov-2004 Construt ALL Particles by T. Koi
 
-/// Defines all particles and builds decay and stepping processes.
+/*! \file
+ \brief Defines all particles and builds decay and stepping processes.
+*/
+
+
 #include "EMMAGeneralPhysics.hh"
 
 #include "G4SystemOfUnits.hh"

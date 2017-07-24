@@ -30,7 +30,11 @@
 // 12-Oct-2003 Bug Fixed (KaonMinus) by T. Koi
 
 
-/// Self-explanatory: builds protons, neutrons, and their associated processes.
+/*! \file
+ \brief Self-explanatory: builds protons, neutrons, and their associated processes.
+ */
+
+
 #include "EMMAHadronPhysics.hh"
 
 #include "globals.hh"

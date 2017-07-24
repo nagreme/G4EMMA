@@ -34,7 +34,9 @@
 #include "G4UIcmdWithAnInteger.hh"
 #include "G4ios.hh"
 
-/// Connects and delivers user commands regarding the primary generator actions to respective classes, and relays their responses.
+/*! \file
+ \brief Connects and delivers user commands regarding the primary generator actions to respective classes, and relays their responses.
+ */
 
 EMMAPrimaryGeneratorMessenger::EMMAPrimaryGeneratorMessenger(EMMAPrimaryGeneratorAction * mpga)
 :target(mpga)

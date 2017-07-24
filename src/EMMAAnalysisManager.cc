@@ -44,7 +44,11 @@
 // Nov 4 2002 -- Upgrade to AIDA 3.0
 // **********************************************************************
 
-/// Calls upon and writes to ROOT files to display results and outcomes.
+/*! \file
+ \brief Calls upon and writes to ROOT files to display results and outcomes.
+ */
+
+
 #ifdef G4ANALYSIS_USE
 
 #include <fstream>

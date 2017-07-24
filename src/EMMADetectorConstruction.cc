@@ -28,9 +28,11 @@
 //
 
 
-/// Constructs all the detectors in the simulation; notably, the target, the degraders, and the PGAC.
-/// Also builds the special materials used for detector components.
-/// Look here if you need to edit detectors, their sizes, their conditions, or their materials.
+/*! \file
+ \brief Constructs all the detectors in the simulation; notably, the target, the degraders, and the PGAC.
+ Also builds the special materials used for detector components.
+ Look here if you need to edit detectors, their sizes, their conditions, or their materials.
+*/
 #include "EMMADetectorConstruction.hh"
 
 #include "G4FieldManager.hh"

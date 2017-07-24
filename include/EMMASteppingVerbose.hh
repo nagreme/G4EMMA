@@ -27,7 +27,7 @@
 // $Id: ExN02SteppingVerbose.hh,v 1.8 2006-06-29 17:47:50 gunter Exp $
 // GEANT4 tag $Name: geant4-09-04-patch-02 $
 //
-//   
+//
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -41,13 +41,15 @@ class EMMASteppingVerbose;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-/// This class manages the verbose outputs in G4SteppingManager. 
-/// It inherits from G4SteppingVerbose.
-/// It shows how to extract information during the tracking of a particle.
-class EMMASteppingVerbose : public G4SteppingVerbose 
+/*! \file
+ \brief This class manages the verbose outputs in G4SteppingManager.
+ It shows how to extract information during the tracking of a particle.
+*/
+
+class EMMASteppingVerbose : public G4SteppingVerbose
 {
  public:
-   
+
   EMMASteppingVerbose();
  ~EMMASteppingVerbose();
 

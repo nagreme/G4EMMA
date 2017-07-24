@@ -3,7 +3,11 @@
 //
 
 
-/// The BGField source files construct the 7 magnetic and electric fields on the EMMA simulation (QQEMEQQ).
+/*! \file
+ \brief The BGField source files construct the 7 magnetic and electric fields on the EMMA simulation (QQEMEQQ).
+*/
+
+
 #include "BGField1.hh"
 #include "fortran_subs.inc"
 #include "G4ios.hh"

@@ -27,8 +27,12 @@
 // --------------------------------------------------------------
 
 
-/// Records the particle information when it is detected by the drift chamber, and prints the results.
-/// Look here if you need to edit how the PGAC detects particles and what results are thus printed.
+/*! \file
+ \brief Records the particle information when it is detected by the drift chamber, and prints the results.
+ Look here if you need to edit how the PGAC detects particles and what results are thus printed.
+*/
+
+
 //
 #include "EMMADriftChamberHit.hh"
 #include "G4ios.hh"

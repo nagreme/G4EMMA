@@ -51,8 +51,10 @@
 //
 // Class Description - End
 
-/// Builds the process of screened electromagnetic nuclear elastic scattering.
-/// Declares many functions primarily used for coulomb interactions between nuclei.
+/*! \file
+ \brief Builds the process of screened electromagnetic nuclear elastic scattering.
+ Declares many functions primarily used for coulomb interactions between nuclei.
+*/
 
 
 #ifndef G4ScreenedNuclearRecoil_h

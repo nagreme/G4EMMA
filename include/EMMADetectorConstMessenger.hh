@@ -39,13 +39,19 @@ class G4UIcmdWithoutParameter;
 #include "globals.hh"
 
 
-/// This header file contains classes built upon the base class created in the G4 header "G4UImessenger.hh." It deals with user commands relating to detector construction.
-/// As explained in the "G4UImessenger.hh" file, it is necessary for the user to to create his(her) own
-/// derivative class if (s)he wishes to define commands (for EMMA).
-/// This file is responsible for deleting commands, delivering commands to destination classes, defining global G4 variables specific to EMMA,
-/// and replying the current values of the parameters (again as described the "G4UImessenger.hh" source file)
-/// This is one of four similar EMMA headers, each titled "EMMA...Messenger.hh," which serves the same above purpose for different aspects of the EMMA simulation:
-/// see "EMMADetectorConstMessenger," "EMMAEventActionMessenger," "EMMAIonPhysicsMessenger," and "EMMAPrimaryGeneratorMessenger."
+/*!
+ \file
+ \brief This header file contains deals with user commands relating to detector construction.
+
+ As explained in the "G4UImessenger.hh" file, it is necessary for the user to to create his(her) own
+ derivative class if (s)he wishes to define commands (for EMMA).
+ This file is responsible for deleting commands, delivering commands to destination classes, defining global G4 variables specific to EMMA,
+ and replying the current values of the parameters (again as described the "G4UImessenger.hh" source file)
+ This is one of four similar EMMA headers, each titled "EMMA...Messenger.hh," which serves the same above purpose for different aspects of the EMMA simulation:
+ see "EMMADetectorConstMessenger," "EMMAEventActionMessenger," "EMMAIonPhysicsMessenger," and "EMMAPrimaryGeneratorMessenger."
+*/
+
+
 class EMMADetectorConstMessenger: public G4UImessenger
 {
 public:
