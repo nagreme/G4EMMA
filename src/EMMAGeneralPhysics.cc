@@ -26,10 +26,10 @@
 // $Id: EMMAGeneralPhysics.cc,v 1.6 2006-06-29 16:32:41 gunter Exp $
 // --------------------------------------------------------------
 //
-// 22-Nov-2004 Construt ALL Particles by T. Koi
+// 22-Nov-2004 Construct ALL Particles by T. Koi
 
 /*! \file
- \brief Defines all particles and builds decay and stepping processes.
+ \brief Constructs all particles and builds decay and stepping processes.
 */
 
 
@@ -65,7 +65,7 @@ void EMMAGeneralPhysics::ConstructParticle()
 {
    // In Alphabetical Order
 
-   //  Construct all barions
+   //  Construct all baryons
    G4BaryonConstructor* baryonConstructor = new G4BaryonConstructor();
    baryonConstructor -> ConstructParticle();
    delete baryonConstructor;

@@ -3,8 +3,8 @@
 // BGField classes objects need dimensions as input parameters.
 // Extra slits added for EDs and MD
 // *********************************************** //
-// Added end caps to minimize scattering on pipe 1
-//  - Alex Wen (July 2017)
+// Added Pipe 1 end caps and detector end caps to minimize scattering out of the spectrometer on pipe 1 and pipes 11 & 12
+//  - Alex Wen (July/August 2017)
 // *********************************************** //
 //
 //
@@ -217,7 +217,20 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Pipe1Cap3z),Pipe1Cap3Logical,"Pipe1Cap3Physical",SpecWorldLogical,0,0,fCheckOverlaps);
 	//
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
-
+    //
+    //
+    // Detector End Caps
+    //
+    // Added to address a problem similar to the one regarding Pipe1. Because there were no caps or walls on the ends of the pipes near the detectors,
+    // the particles had a tendency to exit EMMA. Not only does this slow down simulation speed, it also sometimes enabled the particles to leave
+    // the pipe before the third or fourth quad magnet and then reenter just before the detectors, causing highly unusual and unpredictable patterns, especially
+    // detecting Ar 14+ ions when the detector was tuned to detecting 13.5+ (in order to recreate the results of the initial calibration tests - Ar --> Au)
+    //
+    // To fix this problem disks were again added to the exposed fronts and backs of different parts of the tubes.
+    //
+    // Specifically, a cap was added to the back (downstream) end of Pipe 11 right before Q3, and another cap was added to the front end of Pipe 12 after Q4.
+    //
+    //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
 
 	// Pipe1
 	G4VSolid* Pipe1Solid = new G4Tubs("Pipe1Tub",0*cm,rbigpipe,Pipe1HL,0*deg,360*deg);
@@ -901,6 +914,14 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Pipe11z),Pipe11WallLogical,"Pipe11WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	//Pipe11WallLogical->SetVisAttributes(WallVisAtt);
 
+	//********************************
+	// Pipe11Cap
+	G4VSolid* Pipe11CapSolid = new G4Tubs("Pipe11CapTub",Q3apt+wallThick,rbigpipe+wallThick,0.5*cm,0*deg,360*deg);
+	G4LogicalVolume* Pipe11CapLogical = new G4LogicalVolume(Pipe11CapSolid,Wall,"Pipe11CapLogical", 0,0,0);
+	G4double Pipe11Capz = Pipe10z+Pipe10HL+Pipe11HL+Pipe11HL+0.5*cm;
+	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Pipe11Capz),Pipe11CapLogical,"Pipe11CapPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
+	//********************************
+
 	// Q3 vacuum pipe extending out before magnet
 	G4VSolid* Q3apt1Solid = new G4Tubs("Q3apt1Tub",0*cm,Q3apt,Q3apt1HL,0*deg,360*deg);
 	// Q3apt1Wall
@@ -923,7 +944,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	// Q3 vacuum pipe extending out before magnet
 	G4VSolid* Q3apt2Solid = new G4Tubs("Q3apt2Tub",0*cm,Q3apt,Q3apt2HL,0*deg,360*deg);
 	// Q3apt2Wall
-	G4VSolid* Q3apt2WallSolid = new G4Tubs("Q3apt2WallTub",Q3apt,Q3apt+wallThick,Q3apt2HL,0*deg,360*deg);
+	G4VSolid* Q3apt2WallSolid = new G4Tubs("Q3apt2WallTub",Q3apt,Q4apt+wallThick,Q3apt2HL,0*deg,360*deg);
 	G4LogicalVolume* Q3apt2WallLogical = new G4LogicalVolume(Q3apt2WallSolid,Wall,"Q3apt2WallLogical", 0,0,0);
 	G4double Q3apt2z = Q3z+Q3HL+Q3apt2HL;
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Q3apt2z),Q3apt2WallLogical,"Q3apt2WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
@@ -969,6 +990,14 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4double Pipe12z = Q4z+Q4HL+Pipe12HL;
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Pipe12z),Pipe12WallLogical,"Pipe12WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	//Pipe12WallLogical->SetVisAttributes(WallVisAtt);
+
+	//********************************
+	// Pipe12Cap
+	G4VSolid* Pipe12CapSolid = new G4Tubs("Pipe12CapTub",Q4apt+wallThick,rbigpipe+wallThick,0.5*cm,0*deg,360*deg);
+	G4LogicalVolume* Pipe12CapLogical = new G4LogicalVolume(Pipe12CapSolid,Wall,"Pipe12CapLogical", 0,0,0);
+	G4double Pipe12Capz = Q4z+Q4HL-0.5*cm;
+	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Pipe12Capz),Pipe12CapLogical,"Pipe12CapPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
+	//********************************
 
 	//Create Union for field element
 	zQ4fieldbegins = Q4z - Q4HL;
