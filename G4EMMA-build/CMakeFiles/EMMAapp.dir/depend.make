@@ -2088,6 +2088,7 @@ CMakeFiles/EMMAapp.dir/src/EMMADriftChamber.cc.o: /opt/geant4/geant4.9.6.p04-ins
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamber.cc.o: /opt/geant4/geant4.9.6.p04-install/include/Geant4/templates.hh
 
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o: ../include/EMMADriftChamberHit.hh
+CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o: ../include/ExternalVariables.hh
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o: ../src/EMMADriftChamberHit.cc
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o: /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
 CMakeFiles/EMMAapp.dir/src/EMMADriftChamberHit.cc.o: /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Geometry/Normal3D.h
@@ -6658,6 +6659,7 @@ CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../include/EMMADetectorConst
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../include/EMMAElementField.hh
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../include/EMMAGlobalField.hh
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../include/EMMASteppingAction.hh
+CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../include/ExternalVariables.hh
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: ../src/EMMASteppingAction.cc
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/DualRand.h
 CMakeFiles/EMMAapp.dir/src/EMMASteppingAction.cc.o: /opt/geant4/geant4.9.6.p04-install/include/Geant4/CLHEP/Random/JamesRandom.h

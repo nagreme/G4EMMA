@@ -614,6 +614,8 @@ TROOT.h
 G4SteppingVerbose.hh
 ../include/G4SteppingVerbose.hh
 
+../include/ExternalVariables.hh
+
 ../include/F04StepMax.hh
 globals.hh
 ../include/globals.hh
@@ -1035,6 +1037,8 @@ fstream
 -
 iostream
 -
+ExternalVariables.hh
+/mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/ExternalVariables.hh
 
 /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMAEMPhysics.cc
 EMMAEMPhysics.hh
@@ -1531,6 +1535,8 @@ G4UnitsTable.hh
 /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/G4UnitsTable.hh
 G4Event.hh
 -
+ExternalVariables.hh
+/mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/ExternalVariables.hh
 
 /mnt/c/GitHub/G4EMMA-g4emmaStudent/G4EMMA/src/EMMASteppingVerbose.cc
 EMMASteppingVerbose.hh

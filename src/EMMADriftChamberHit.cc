@@ -33,6 +33,8 @@
 */
 
 
+
+
 //
 #include "EMMADriftChamberHit.hh"
 #include "G4ios.hh"
@@ -58,6 +60,8 @@
 
 #include <fstream>
 #include <iostream>
+
+#include "ExternalVariables.hh"
 
 G4Allocator<EMMADriftChamberHit> EMMADriftChamberHitAllocator;
 
@@ -294,8 +298,11 @@ void EMMADriftChamberHit::Print()
 	  //	<< Ekin << ", " ;
 	  dirn = sqrt(Momentum.x()*Momentum.x()+Momentum.y()*Momentum.y()+Momentum.z()*Momentum.z());
 	  theta = std::acos( Momentum.z()/dirn );
-      	  outFile << Ekin << ", " << theta/deg << ", " << worldPos.x()/mm << ", " << worldPos.y()/mm << std::endl;
+      	  outFile << Ekin << ", " << kin << ", " << theta/deg << ", " << ang << ", " << angx << ", " << comx << ", " <<
+      	  comy << ", " << worldPos.x()/mm << ", " << exx << ", " << worldPos.y()/mm << ", " << why <<  std::endl;
 	}
+
+	// Simply reorder, remove, or add to the above variables to make changes to the data printed in fp_beam.dat. See ExternalVariables.hh for a detailed description.
 
 	outFile.close();
 

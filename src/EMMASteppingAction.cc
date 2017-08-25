@@ -59,9 +59,13 @@
 
 #include <G4Event.hh>
 
+#define pi 3.14159265359
+
+#include "ExternalVariables.hh"
+double kin, ang, angx, comx, comy, exx, why, d;
+
 // global variables
 G4double currentCharge = 0.0; // default value is 0
-
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -197,6 +201,11 @@ void EMMASteppingAction::UserSteppingAction(const G4Step* theStep)
     //   Writes energies and angles just after target to file
     //   (so that electric and magnetic field strengths can be
     //   optimized)
+    //
+    // ^^^ The above description is strange. There is no mention in any other
+    // code of using these values to optimize E and B strengths. However,
+    // this information was incredibly useful when analyzing what
+    // caused particles to form strange patterns in the focal plane.  - Alex 2017
     if (!prepareBeam) {
       if (name2!=name) {
 	G4double dirn = sqrt( MomentumDirection[0]*MomentumDirection[0]
@@ -208,6 +217,13 @@ void EMMASteppingAction::UserSteppingAction(const G4Step* theStep)
 	outfile << theKineticEnergy/MeV << ", " << theta/deg << ", "
 		<< worldPosition2[0] << ", " << worldPosition2[1] << G4endl;
 	outfile.close();
+    kin=theKineticEnergy/MeV;
+    ang=theta/deg;
+    angx=(atan(MomentumDirection[0]/MomentumDirection[2]))*(180/pi);
+    comx=MomentumDirection[0];
+    comy=MomentumDirection[1];
+    exx=worldPosition2[0];
+    why=worldPosition2[1];
       }
     }
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//

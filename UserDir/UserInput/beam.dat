@@ -1,8 +1,8 @@
-5000      # number of events
+500      # number of events
 18        # beam Z
 36        # beam A
-13        # beam charge state Q
+14        # beam charge state Q
 80.    	  # beam kinetic energy (MeV)
 10.0      # fractional energy spread (FWHM)
 1.0       # beam-spot diameter (mm)
-100.0     # normalized transverse emittance (pi mm mrad)
+10.0     # normalized transverse emittance (pi mm mrad)
