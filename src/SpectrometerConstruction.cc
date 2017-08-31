@@ -186,7 +186,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 	//<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
     //
-    // Pipe1 end caps
+    // Pipe1 end caps (Alex Wen, July 2017)
     //
     // This part is added to minimize the unwanted scattering of particles outside of the spectrometer (which slows down the simulation speed).
     // After hitting the target the recoils have a tendency to scatter out of the two ends of pipe1, where there are no walls.
@@ -219,16 +219,18 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
     //
     //
-    // Detector End Caps
+    // Detector End Caps (Alex Wen, July 2017)
     //
     // Added to address a problem similar to the one regarding Pipe1. Because there were no caps or walls on the ends of the pipes near the detectors,
     // the particles had a tendency to exit EMMA. Not only does this slow down simulation speed, it also sometimes enabled the particles to leave
-    // the pipe before the third or fourth quad magnet and then reenter just before the detectors, causing highly unusual and unpredictable patterns, especially
+    // the pipe before the third or fourth quad magnet and then reenter just before the detectors and still be detected, causing highly unusual and unpredictable patterns, especially
     // detecting Ar 14+ ions when the detector was tuned to detecting 13.5+ (in order to recreate the results of the initial calibration tests - Ar --> Au)
     //
     // To fix this problem disks were again added to the exposed fronts and backs of different parts of the tubes.
     //
     // Specifically, a cap was added to the back (downstream) end of Pipe 11 right before Q3, and another cap was added to the front end of Pipe 12 after Q4.
+    //
+    // See sections Pipe11Cap and Pipe12Cap later on in this file.
     //
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>//
 
@@ -915,7 +917,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	//Pipe11WallLogical->SetVisAttributes(WallVisAtt);
 
 	//********************************
-	// Pipe11Cap
+	// Pipe11Cap (Detector end caps)
 	G4VSolid* Pipe11CapSolid = new G4Tubs("Pipe11CapTub",Q3apt+wallThick,rbigpipe+wallThick,0.5*cm,0*deg,360*deg);
 	G4LogicalVolume* Pipe11CapLogical = new G4LogicalVolume(Pipe11CapSolid,Wall,"Pipe11CapLogical", 0,0,0);
 	G4double Pipe11Capz = Pipe10z+Pipe10HL+Pipe11HL+Pipe11HL+0.5*cm;
@@ -992,7 +994,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	//Pipe12WallLogical->SetVisAttributes(WallVisAtt);
 
 	//********************************
-	// Pipe12Cap
+	// Pipe12Cap (Detector end cap)
 	G4VSolid* Pipe12CapSolid = new G4Tubs("Pipe12CapTub",Q4apt+wallThick,rbigpipe+wallThick,0.5*cm,0*deg,360*deg);
 	G4LogicalVolume* Pipe12CapLogical = new G4LogicalVolume(Pipe12CapSolid,Wall,"Pipe12CapLogical", 0,0,0);
 	G4double Pipe12Capz = Q4z+Q4HL-0.5*cm;

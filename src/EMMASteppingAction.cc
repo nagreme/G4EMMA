@@ -62,7 +62,7 @@
 #define pi 3.14159265359
 
 #include "ExternalVariables.hh"
-double kin, ang, angx, comx, comy, exx, why, d;
+double kin, ang, angx, comx, comy, exx, why;
 
 // global variables
 G4double currentCharge = 0.0; // default value is 0
@@ -120,7 +120,7 @@ EMMASteppingAction::EMMASteppingAction()
 EMMASteppingAction::~EMMASteppingAction()
 {
 #ifdef G4ANALYSIS_USE
-  //This root histogram gets writen to the root file created in the constructor of EventAction.cc
+  //This root histogram gets written to the root file created in the constructor of EventAction.cc
   dead_hit->Write();
 #endif // G4ANALYSIS_USE
 }
