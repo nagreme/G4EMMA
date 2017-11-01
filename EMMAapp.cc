@@ -212,7 +212,7 @@ int main(int argc,char** argv)
   command = "/twoBodyReaction/ExcitationEnergy3 "; command.append(s12); UImanager->ApplyCommand(command);
   //G4double crossSection1234 = d13;
   G4int simtype=0;
-  if (s3=="0" && s4=="0") simtype=0; // reaction not specified; simulate beam
+  if (s3=="0" && s4=="0") simtype=0; // reaction not specified; simulate beam, redundant assignment
   else simtype=1; // reaction specified; simulate reaction
   //-----------------------------------------
   
@@ -257,6 +257,19 @@ int main(int argc,char** argv)
   //UImanager->ApplyCommand("/mydet/doReaction"); //simulate recoils from reaction depth
   //-----------------------------------------
 //-----------------------------------------------------------------------------------------//
+	
+//**************************************************************************
+ // Run simulation
+ // (Nadège Pulgar-Vidal, G4EMMA, winter term 2017)
+ // Enable "smarter" autorun (to be used with wrapper for web interface)
+ //**************************************************************************
+ UImanager->ApplyCommand("/mydet/doBeam");
+ if (simtype == 1) //reaction specified (z2 != 0 or a2 != 0)
+ {
+ 	UImanager->ApplyCommand("/mydet/doPrepare");
+ 	UImanager->ApplyCommand("/mydet/doReaction");
+ }
+ //**************************************************************************
   
 
   // Print hit info
@@ -318,7 +331,7 @@ void ReadUserInput_Beam( G4String &s1, G4String &s2, G4String &s3, G4String &s4,
       inputfil >> text;
       if (text=="#") { // skip comments
 	getline (inputfil,line);
-      }
+      }//if (commnet)
       else {	 
 	n = n+1;
 	if (n==1) s1 = text; // # of events 
@@ -329,16 +342,16 @@ void ReadUserInput_Beam( G4String &s1, G4String &s2, G4String &s3, G4String &s4,
 	if (n==6) s6 = text; // resolution
 	if (n==7) s7 = text; // diameter
 	if (n==8) s8 = text; // normalized transverse geometric emittance
-      }
-    }
+      }//else
+    }//while
     inputfil.close();
-  }
+  }//if (is_open)
   else G4cout << "Unable to open " << filename << G4endl; 
   // get units right:
   s5.append(" MeV");
   s7.append(" mm");
   s8.append(" mm");
-}
+}//ReadUserInput_Beam
 
 
 void ReadUserInput_Reaction( G4String &s1, G4String &s2, G4String &s3, G4String &s4, G4String &s5, G4String &s6, 
@@ -357,7 +370,7 @@ void ReadUserInput_Reaction( G4String &s1, G4String &s2, G4String &s3, G4String 
       inputfil >> text;
       if (text=="#") { // skip comments
 	getline (inputfil,line);
-      }
+      }//if (comment)
       else {	 
 	n = n+1;
 	if (n==1) s1 = text; // Z1 
@@ -374,16 +387,16 @@ void ReadUserInput_Reaction( G4String &s1, G4String &s2, G4String &s3, G4String 
 	if (n==12) s12 = text; // excitation energy of fragment 3
 	val = atof(text.c_str());  
 	if (n==13) d13 = val; // cross section (mb/sr)
-      }
-    }
+      }//else
+    }//while
     inputfil.close();
-  }
+  }//if (is_open)
   else G4cout << "Unable to open " << filename << G4endl; 
   // get units right:
   s9.append(" deg");
   s10.append(" deg");
   s12.append(" MeV");
-}
+}//ReadUserInput_Reaction
 
 
 void ReadUserInput_CentralTrajectory( G4String &s1, G4String &s2, G4String &s3, G4String &s4 ) 
@@ -399,17 +412,17 @@ void ReadUserInput_CentralTrajectory( G4String &s1, G4String &s2, G4String &s3, 
       inputfil >> text;
       if (text=="#") { // skip comments
 	getline (inputfil,line);
-      }
+      }//if (comment)
       else {	 
 	n = n+1;
 	if (n==1) s1 = text; // Z 
 	if (n==2) s2 = text; // A
 	if (n==3) s3 = text; // charge-state
 	if (n==4) s4 = text; // energy
-      }
-    }
+      }//else
+    }//while
     inputfil.close();
-  }
+  }//if (is_open)
   else G4cout << "Unable to open " << filename << G4endl; 
   // get units right:
   s4.append(" MeV");
