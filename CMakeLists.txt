@@ -8,7 +8,7 @@ project(EMMA)
 # You can set WITH_GEANT4_UIVIS to OFF via the command line or ccmake/cmake-gui
 # to build a batch mode only executable
 #
-option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
+option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" OFF)
 if(WITH_GEANT4_UIVIS)
   find_package(Geant4 REQUIRED ui_all vis_all)
 else()
@@ -42,7 +42,9 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-set(F2C_LIBRARIES /opt/local/lib/libf2c.a)
+#set(F2C_LIBRARIES /opt/local/lib/libf2c.a)
+#^don't hardcode paths plz...
+find_library(F2C_LIBRARIES libf2c.a) #must be static library for some reason
 add_executable(EMMAapp EMMAapp.cc ${sources} ${headers})
 target_link_libraries(EMMAapp ${Geant4_LIBRARIES} ${ROOT_LIBRARIES} 
 ${F2C_LIBRARIES} )
