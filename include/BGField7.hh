@@ -22,7 +22,6 @@ extern G4double userCharge; // EMMAPrimaryGeneratorAction.cc
 class BGField7 : public EMMAElementField
 {
 public:
-<<<<<<< BGField7.hh
   // Constructor
   // offset coordinates are of the x and z location of where the field begins in reference to
   // the world logical volume
