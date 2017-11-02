@@ -1,0 +1,7 @@
+EMMAapp
+Makefile
+CMakeCache.txt
+CmakeFiles/
+cmake_install.cmake
+UserDir/Results
+UserDir/BeamSampling
