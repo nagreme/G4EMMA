@@ -40,14 +40,15 @@ class F04StepMax;
 class EMMAGeneralPhysics : public G4VPhysicsConstructor
 {
   public:
+    // Constructor
     EMMAGeneralPhysics(const G4String& name = "general");
+    // Destructor
     virtual ~EMMAGeneralPhysics();
 
-	void SetStepMax(G4double);
+	  void SetStepMax(G4double);
     F04StepMax* GetStepMaxProcess();
     void AddStepMax();
-	
-  public:
+
     // This method will be invoked in the Construct() method.
     // each particle type will be instantiated
     virtual void ConstructParticle();
@@ -55,23 +56,14 @@ class EMMAGeneralPhysics : public G4VPhysicsConstructor
     // This method will be invoked in the Construct() method.
     // each physics process will be instantiated and
     // registered to the process manager of each particle type
-	virtual void ConstructProcess();
+	  virtual void ConstructProcess();
 
-	
+
 private:
-	
     G4double MaxChargedStep;
     F04StepMax* stepMaxProcess;
-	
+
 };
 
 
 #endif
-
-
-
-
-
-
-
-

@@ -13,7 +13,7 @@
 
 
 
-// global variables 
+// global variables
 extern G4double currentCharge; // EMMASteppingAction.cc
 extern G4double userCharge; // EMMAPrimaryGeneratorAction.cc
 
@@ -22,13 +22,15 @@ extern G4double userCharge; // EMMAPrimaryGeneratorAction.cc
 class BGField5 : public EMMAElementField
 {
 public:
-  //offset coordinates are of the x and z location of where the field begins in reference to 
-  //the world logical volume
- // BGField5(G4double xoffset, G4double zoffset,G4double zbefore,G4double zafter);
+  // Constructor
+  // offset coordinates are of the x and z location of where the field begins in reference to
+  // the world logical volume
+  // BGField5(G4double xoffset, G4double zoffset,G4double zbefore,G4double zafter);
  BGField5(G4double xoffset, G4double zoffset,G4double zbefore,G4double zafter, G4LogicalVolume*, G4ThreeVector);
   ~BGField5();
 
   // instead you can limit the size
+  // Retrieves length, width, and height (of type G4double) and returns the maximum representable finite double number
 
   virtual G4double GetLength() { return DBL_MAX; }
   virtual G4double GetWidth() { return DBL_MAX; }
@@ -36,20 +38,20 @@ public:
 
   // AddFieldValue() adds the field for this element into the field[].
   // Point() is in global coordinates.
-  
+
   virtual void AddFieldValue( const G4double Point[3], G4double field[6]) const;
-  
  // virtual void GetFieldValue( const double Point[3], G4double *Efield) const;
-  
+
 private:
   double data[75], offset[3];
   G4int i;
   G4double Pi;
   G4double FieldStrength_0;
 
+
 public:
-  G4double GetFieldStrength() { return data[14]; }; 
-  void ScaleFieldStrength( G4double esf ) { data[14] = esf * FieldStrength_0 ; }; 
+  G4double GetFieldStrength() { return data[14]; };
+  void ScaleFieldStrength( G4double esf ) { data[14] = esf * FieldStrength_0 ; };
 
 };
 #endif

@@ -45,10 +45,11 @@
 class EMMAMuonPhysics : public G4VPhysicsConstructor
 {
   public:
+    // Constructor
     EMMAMuonPhysics(const G4String& name="muon");
+    // Destructor
     virtual ~EMMAMuonPhysics();
 
-  public:
     // This method will be invoked in the Construct() method.
     // each particle type will be instantiated
     virtual void ConstructParticle(){;};
@@ -58,10 +59,8 @@ class EMMAMuonPhysics : public G4VPhysicsConstructor
     // registered to the process manager of each particle type
     virtual void ConstructProcess();
 
-  protected:
 
 };
 
 
 #endif
-

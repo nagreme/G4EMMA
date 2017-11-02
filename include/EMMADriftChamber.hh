@@ -37,22 +37,25 @@ class G4TouchableHistory;
 
 class EMMADriftChamber : public G4VSensitiveDetector
 {
-
   public:
-      EMMADriftChamber(G4String name);
-      virtual ~EMMADriftChamber();
 
-      virtual void Initialize(G4HCofThisEvent*HCE);
-      virtual G4bool ProcessHits(G4Step*aStep,G4TouchableHistory*ROhist);
-      virtual void EndOfEvent(G4HCofThisEvent*HCE);
+    // Constructor.
+    EMMADriftChamber(G4String name);
+
+    // Destructor
+    virtual ~EMMADriftChamber();
+
+    virtual void Initialize(G4HCofThisEvent*HCE);
+    virtual G4bool ProcessHits(G4Step*aStep,G4TouchableHistory*ROhist);
+    virtual void EndOfEvent(G4HCofThisEvent*HCE);
 
   private:
-      EMMADriftChamberHitsCollection * hitsCollection;
-      G4int HCID;
+
+    EMMADriftChamberHitsCollection * hitsCollection;
+    G4int HCID;
 };
 
 
 
 
 #endif
-
