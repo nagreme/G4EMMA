@@ -315,120 +315,122 @@ int main(int argc,char** argv)
 }
 
 
+// The following funtions that read user input could use some serious refactoring
+// I did at least change most of the sequential if statements to if-elseif blocks
 
 
 ///Takes the manually-input values from the user input file "beam.dat" (found in [source directory]/UserDir/UserInput) and assigns the input
 ///values as strings to be used as simulation commands (See "Specify Beam" section in main())
 void ReadUserInput_Beam( G4String &s1, G4String &s2, G4String &s3, G4String &s4, G4String &s5, G4String &s6, G4String &s7, G4String &s8 )
 {
-  s1=""; s2=""; s3=""; s4=""; s5=""; s6=""; s7=""; s8="";
-  G4String text, line;
-  ifstream inputfil;
-  G4String filename = UserDir + "/UserInput/beam.dat";
-  inputfil.open ( filename, ios::in );
-  if ( inputfil.is_open() ) {
-    int n=0;
-    while ( inputfil.good() ) {
-      inputfil >> text;
-      if (text=="#") { // skip comments
-	getline (inputfil,line);
-}//if (comment)
-      else {
-	n = n+1;
-	if (n==1) s1 = text; // # of events
-	if (n==2) s2 = text; // Z
-	if (n==3) s3 = text; // A
-	if (n==4) s4 = text; // charge-state
-	if (n==5) s5 = text; // energy
-	if (n==6) s6 = text; // resolution
-	if (n==7) s7 = text; // diameter
-	if (n==8) s8 = text; // normalized transverse geometric emittance
-      }//else
-    }//while
-    inputfil.close();
-  }//if (is_open)
-  else G4cout << "Unable to open " << filename << G4endl;
-  // get units right:
-  s5.append(" MeV");
-  s7.append(" mm");
-  s8.append(" mm");
+	s1=""; s2=""; s3=""; s4=""; s5=""; s6=""; s7=""; s8="";
+	G4String text, line;
+	ifstream inputfil;
+	G4String filename = UserDir + "/UserInput/beam.dat";
+	inputfil.open ( filename, ios::in );
+	if ( inputfil.is_open() ) {
+		int n = 0;
+		while ( inputfil.good() ) {
+			inputfil >> text;
+			if (text == "#") { // the original author wanted to skip comment lines but this just skips lines that contain exactly "#"
+				getline (inputfil, line); // which is a good thing because this throws away the next line??? Which might not be a comment
+			}//if (comment)
+			else {
+				n++;
+				if (n==1) s1 = text; // # of events
+				else if (n==2) s2 = text; // Z
+				else if (n==3) s3 = text; // A
+				else if (n==4) s4 = text; // charge-state
+				else if (n==5) s5 = text; // energy
+				else if (n==6) s6 = text; // resolution
+				else if (n==7) s7 = text; // diameter
+				else if (n==8) s8 = text; // normalized transverse geometric emittance
+			}//else
+		}//while
+		inputfil.close();
+	}//if (is_open)
+	else G4cout << "Unable to open " << filename << G4endl;
+	// get units right:
+	s5.append(" MeV"); //these are probably just getting appended at the end of a comment explanation of the value
+	s7.append(" mm"); //so they're probably useless...
+	s8.append(" mm");
 }//ReadUserInput_Beam
 
 
 ///Takes the input values from the user input file "reaction.dat" (found in [source directory]/UserDir/UserInput) and assigns the input
 ///values as strings to be used as simulation commands (See "Nuclear-reaction process" section in main())
 void ReadUserInput_Reaction( G4String &s1, G4String &s2, G4String &s3, G4String &s4, G4String &s5, G4String &s6,
-			     G4String &s7, G4String &s8, G4String &s9, G4String &s10, G4String &s11, G4String &s12,
-			     G4double &d13 )
-{
-  s1=""; s2=""; s3=""; s4=""; s5=""; s6=""; s7=""; s8=""; s9=""; s10=""; s11=""; s12=""; d13=0;
-  G4String text, line;
-  G4double val;
-  ifstream inputfil;
-  G4String filename = UserDir + "/UserInput/reaction.dat";
-  inputfil.open ( filename, ios::in );
-  if ( inputfil.is_open() ) {
-    int n=0;
-    while ( inputfil.good() ) {
-      inputfil >> text;
-      if (text=="#") { // skip comments
-	getline (inputfil,line);
-      }//if (comment)
-      else {
-	n = n+1;
-	if (n==1) s1 = text; // Z1
-	if (n==2) s2 = text; // A1
-	if (n==3) s3 = text; // Z2
-	if (n==4) s4 = text; // A2
-	if (n==5) s5 = text; // Z3
-	if (n==6) s6 = text; // A3
-	if (n==7) s7 = text; // Z4
-	if (n==8) s8 = text; // A4
-	if (n==9) s9 = text; // theta cm min
-	if (n==10) s10 = text; // theta cm max
-	if (n==11) s11 = text; // charge-state of fragment 3
-	if (n==12) s12 = text; // excitation energy of fragment 3
-	val = atof(text.c_str());
-	if (n==13) d13 = val; // cross section (mb/sr)
-      }//else
-    }//while
-    inputfil.close();
-  }//if (is_open)
-  else G4cout << "Unable to open " << filename << G4endl;
-  // get units right:
-  s9.append(" deg");
-  s10.append(" deg");
-  s12.append(" MeV");
-}//ReadUserInput_Reaction
+	G4String &s7, G4String &s8, G4String &s9, G4String &s10, G4String &s11, G4String &s12,
+	G4double &d13 )
+	{
+		s1=""; s2=""; s3=""; s4=""; s5=""; s6=""; s7=""; s8=""; s9=""; s10=""; s11=""; s12=""; d13=0;
+		G4String text, line;
+		G4double val;
+		ifstream inputfil;
+		G4String filename = UserDir + "/UserInput/reaction.dat";
+		inputfil.open ( filename, ios::in );
+		if ( inputfil.is_open() ) {
+			int n = 0;
+			while ( inputfil.good() ) {
+				inputfil >> text;
+				if (text=="#") { // skip comments
+					getline (inputfil,line);
+				}//if (comment)
+				else {
+					n++;
+					if (n==1) s1 = text; // Z1
+					else if (n==2) s2 = text; // A1
+					else if (n==3) s3 = text; // Z2
+					else if (n==4) s4 = text; // A2
+					else if (n==5) s5 = text; // Z3
+					else if (n==6) s6 = text; // A3
+					else if (n==7) s7 = text; // Z4
+					else if (n==8) s8 = text; // A4
+					else if (n==9) s9 = text; // theta cm min
+					else if (n==10) s10 = text; // theta cm max
+					else if (n==11) s11 = text; // charge-state of fragment 3
+					else if (n==12) s12 = text; // excitation energy of fragment 3
+					val = atof(text.c_str());
+					if (n==13) d13 = val; // cross section (mb/sr)
+				}//else
+			}//while
+			inputfil.close();
+		}//if (is_open)
+		else G4cout << "Unable to open " << filename << G4endl;
+		// get units right:
+		s9.append(" deg");
+		s10.append(" deg");
+		s12.append(" MeV");
+	}//ReadUserInput_Reaction
 
 
 ///Takes the input values from the user input file "centralTrajectory.dat" (found in [source directory]/UserDir/UserInput) and assigns the input
 ///values as strings to be used as simulation commands (See "Specify central trajectory" section in main()).
 void ReadUserInput_CentralTrajectory( G4String &s1, G4String &s2, G4String &s3, G4String &s4 )
 {
-  s1="";  s2="";  s3="";  s4="";
-  G4String text, line;
-  ifstream inputfil;
-  G4String filename = UserDir + "/UserInput/centralTrajectory.dat";
-  inputfil.open ( filename, ios::in );
-  if ( inputfil.is_open() ) {
-    int n=0;
-    while ( inputfil.good() ) {
-      inputfil >> text;
-      if (text=="#") { // skip comments
-	getline (inputfil,line);
-      }//if (comment)
-      else {
-	n = n+1;
-	if (n==1) s1 = text; // Z
-	if (n==2) s2 = text; // A
-	if (n==3) s3 = text; // charge-state
-	if (n==4) s4 = text; // energy
-      }//else
-    }//while
-    inputfil.close();
-  }//if (is_open)
-  else G4cout << "Unable to open " << filename << G4endl;
-  // get units right:
-  s4.append(" MeV");
-}
+	s1="";  s2="";  s3="";  s4="";
+	G4String text, line;
+	ifstream inputfil;
+	G4String filename = UserDir + "/UserInput/centralTrajectory.dat";
+	inputfil.open ( filename, ios::in );
+	if ( inputfil.is_open() ) {
+		int n = 0;
+		while ( inputfil.good() ) {
+			inputfil >> text;
+			if (text=="#") { // skip comments
+				getline (inputfil,line);
+			}//if (comment)
+			else {
+				n++;
+				if (n==1) s1 = text; // Z
+				else if (n==2) s2 = text; // A
+				else if (n==3) s3 = text; // charge-state
+				else if (n==4) s4 = text; // energy
+			}//else
+		}//while
+		inputfil.close();
+	}//if (is_open)
+	else G4cout << "Unable to open " << filename << G4endl;
+	// get units right:
+	s4.append(" MeV");
+}//ReadUserInput_CentralTrajectory

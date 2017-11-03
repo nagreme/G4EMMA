@@ -117,17 +117,17 @@ EMMAPrimaryGeneratorAction::EMMAPrimaryGeneratorAction()  // constructor
 	G4String filename = UserDir + "/UserInput/alphaSource.dat";
 	inputfil.open ( filename, ios::in );
 	if ( inputfil.is_open() ) {
-	  int n=0;
+	  int n = 0;
 	  while ( inputfil.good() ) {
 	    inputfil >> text;
 	    if (text=="#") { // skip comments
 	      getline (inputfil,line);
 	    }
 	    else {
-	      n = n+1;
+	      n++;
 	      if (n==1) {if (text=="YES") useAlphaSource = true;}
-	      if (n==2) {energyAlphaSource = atof(text.c_str());}
-	      if (n==3) {maxAngleAlphaSource = atof(text.c_str());}
+	      else if (n==2) {energyAlphaSource = atof(text.c_str());}
+	      else if (n==3) {maxAngleAlphaSource = atof(text.c_str());}
 	    }
 	  }
 	  inputfil.close();
