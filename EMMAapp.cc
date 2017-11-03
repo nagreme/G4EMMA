@@ -258,18 +258,18 @@ int main(int argc,char** argv)
   //-----------------------------------------
 //-----------------------------------------------------------------------------------------//
 
-// //**************************************************************************
-//  // Run simulation (for server version)
-//  // (Nadège Pulgar-Vidal, G4EMMA, winter term 2017)
-//  // Enable "smarter" autorun (to be used with wrapper for web interface)
-//  //**************************************************************************
-//  UImanager->ApplyCommand("/mydet/doBeam");
-//  if (simtype == 1) //reaction specified (z2 != 0 or a2 != 0)
-//  {
-//  	UImanager->ApplyCommand("/mydet/doPrepare");
-//  	UImanager->ApplyCommand("/mydet/doReaction");
-//  }
-//  //**************************************************************************
+//**************************************************************************
+ // Run simulation (for server version)
+ // (Nadège Pulgar-Vidal, G4EMMA, winter term 2017)
+ // Enable "smarter" autorun (to be used with wrapper for web interface)
+ //**************************************************************************
+ UImanager->ApplyCommand("/mydet/doBeam");
+ if (simtype == 1) //reaction specified (z2 != 0 or a2 != 0)
+ {
+ 	UImanager->ApplyCommand("/mydet/doPrepare");
+ 	UImanager->ApplyCommand("/mydet/doReaction");
+ }
+ //**************************************************************************
 
 
   // Print hit info
