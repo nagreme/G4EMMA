@@ -130,6 +130,14 @@
 #include "G4AntiProtonAnnihilationAtRest.hh"
 #include "G4AntiNeutronAnnihilationAtRest.hh"
 
+
+/*! \file
+ \brief The G4 header "G4VPhysicsConstructor.hh" contains a virtual class that must be used to create concrete classes for specific applications (such as EMMA).
+ Specifically, this header defines particles and processes required to simulate hadron interactions.
+*/
+
+
+
 class EMMAHadronPhysics : public G4VPhysicsConstructor
 {
   public:

@@ -1,6 +1,17 @@
 // Created by Matthew Williams
 // Adapted from example B2b
 
+/*!
+     \file
+     \brief This is a parameterisation that describes a series of cylinders (wires) along X.
+
+  The cylinders have equal radius and length.
+  They are spaced an equal distance apart, starting from given location.
+  This header file defines variables and functions that are designed to be used in addition to the G4 header file "G4VPVParameterisation.hh"
+  The file "G4VPVParameterisation.hh," in turn, calls upon other headers that detail materials and other technical aspects of parameterizing.
+  Hence this header file adds to the classes and variables already declared in "G4VPVParameterisation.hh" to suit EMMA's needs.
+  *Note: this header file also contains a considerable number of dummy classes and functions to get rid of error warnings. (These classes and variables were first introduced in the G4 headers)
+*/
 
 #ifndef CathodeWireParameterisation_h
 #define CathodeWireParameterisation_h 1

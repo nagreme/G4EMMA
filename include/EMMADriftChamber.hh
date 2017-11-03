@@ -35,6 +35,11 @@ class G4Step;
 class G4HCofThisEvent;
 class G4TouchableHistory;
 
+/*!
+ \file
+ \brief
+ This header contains the class required to run the PGAC drift chamber (see also G4SensitiveDetector.hh)
+*/
 class EMMADriftChamber : public G4VSensitiveDetector
 {
   public:

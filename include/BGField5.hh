@@ -1,6 +1,16 @@
 //
 // Created from BuildGeometry program
 //
+
+/**
+ \file
+ \brief BGField1-7 are 7 almost identical headers that define 7 similar classes derived from "EMMAElementField.hh."
+ They each descibe an EM field that is part of EMMA.
+
+ There are 7 header files to reflect the 7 fields used in EMMA: the Q Q E M E Q Q set up.
+ This is evident in the history of the document; before "EMMAElementField.hh" was developed for general EM fields,
+ old G4 headers like "G4MagneticField" and "G4ElectricField" were used.
+ */
 #ifndef BGField5_H
 #define BGField5_H 1
 #include "globals.hh"
@@ -19,6 +29,8 @@ extern G4double userCharge; // EMMAPrimaryGeneratorAction.cc
 
 
 //class BGField5 : public G4ElectricField
+
+
 class BGField5 : public EMMAElementField
 {
 public:

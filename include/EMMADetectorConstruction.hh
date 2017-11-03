@@ -53,6 +53,14 @@ class G4UserLimits;
 class EMMADetectorConstMessenger;
 class SpectrometerConstruction;
 
+
+/*!
+ \file
+ \brief This header file builds on the G4 header "G4VUserDetectorConstruction.hh" to set the global G4 variables specifying the materials and
+ simulation attributes of the EMMA detectors. Several EMMA functions (regarding its detectors) are also defined.
+*/
+
+
 class EMMADetectorConstruction : public G4VUserDetectorConstruction
 {
 public:

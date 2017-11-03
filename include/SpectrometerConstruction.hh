@@ -10,7 +10,7 @@
 extern G4String MotherDir; // EMMAapp.cc
 extern G4String UserDir; // EMMAapp.cc
 
-
+// Dummy classes, I presume? These were predefined somewhere.  -Alex
 class G4LogicalVolume;
 class G4Material;
 class G4VisAttributes;
@@ -22,6 +22,12 @@ class BGField5;
 class BGField6;
 class BGField7;
 class EMMAGlobalField;
+
+/*! \file
+ \brief Builds the EMMA spectrometer through defining classes and variables, including those for slit control.
+   This header is built upon the virtual classes inherited from "G4VUserDetectorConstruction.hh."
+*/
+
 
 class SpectrometerConstruction
 {
