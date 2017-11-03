@@ -3,8 +3,7 @@ Makefile
 CMakeCache.txt
 CmakeFiles
 cmake_install.cmake
-UserDir/Results
-UserDir/BeamSampling
+UserDir
 html/*
 include/html/*
 *.o
