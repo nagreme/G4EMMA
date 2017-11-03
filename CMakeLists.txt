@@ -8,7 +8,7 @@ project(EMMA)
 # You can set WITH_GEANT4_UIVIS to OFF via the command line or ccmake/cmake-gui
 # to build a batch mode only executable
 #
-option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
+option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" OFF)
 if(WITH_GEANT4_UIVIS)
   find_package(Geant4 REQUIRED ui_all vis_all)
 else()
@@ -26,36 +26,27 @@ include(${Geant4_USE_FILE})
 #
 find_package(ROOT)
 if(ROOT_FOUND)
-  add_definitions(-DG4ANALYSIS_USE)   
+  add_definitions(-DG4ANALYSIS_USE)
 endif()
 
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 # NB: headers are included so they will show up in IDEs
 #
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include
                     ${Geant4_INCLUDE_DIR}
                     ${ROOT_INCLUDE_DIR})
 
-#Grab all source/header files aren't hidden / edits				  
+#Grab all source/header files aren't hidden / edits
 file(GLOB sources "${PROJECT_SOURCE_DIR}/src/[^.]*.cc")
 file(GLOB headers "${PROJECT_SOURCE_DIR}/include/[^.]*.hh")
 
 
 #----------------------------------------------------------------------------
-# Find the fortran2c library for mitray
-find_library(F2C_LIBRARY
-    NAMES libf2c.a
-    PATHS 
-    /opt/local/lib/
-    /usr/local/lib/
-    /usr/lib
-	[NO_DEFAULT_PATH]
-    )
-message(STATUS "Lib file detected: [${F2C_LIBRARY}].")
+# Add the executable, and link it to the Geant4 libraries
 
-#---------------------------------------------------------------------------
-#Make the executable with all the necessary libs
+find_library(F2C_LIBRARIES libf2c.a) #must be static library for some reason
+message(STATUS "Lib file detected: [${F2C_LIBRARY}].")
 add_executable(EMMAapp EMMAapp.cc ${sources} ${headers})
 target_link_libraries(EMMAapp ${Geant4_LIBRARIES} ${ROOT_LIBRARIES} ${F2C_LIBRARY} )
 
@@ -86,4 +77,3 @@ add_custom_target(EMMA DEPENDS EMMAapp)
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
 install(TARGETS EMMAapp DESTINATION bin)
-
