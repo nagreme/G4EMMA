@@ -583,8 +583,16 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   G4double eps = 0.0;
   G4double Qc = centralQ * (1.0 - eps);
 
+  G4cout << centralQ << G4endl;
+  G4cout << eps << G4endl;
+  G4cout << Qc << G4endl;
+  G4cout << keV << G4endl;
+  G4cout << centralZ << G4endl;
+  G4cout << centralA << G4endl;
+
+
   // rigidities of central trajectory
-  G4double excitationEnergy = 0.*keV;
+  G4double excitationEnergy = 0.*keV; // keV = 0.001 but what is the point of multiplying by zero???
   G4ParticleDefinition* ic = G4ParticleTable::GetParticleTable()->GetIon(centralZ,centralA,excitationEnergy);
   G4double mc = ic->GetPDGMass();
   G4double pc = std::sqrt((centralE + mc)*(centralE + mc)-(mc*mc));
@@ -614,7 +622,7 @@ void EMMADetectorConstruction::CalculateScalingFactors()
     flag = true;
   }
   if (RE_SIunits>25.0) {
-    G4cout << "Electric rigidity of central trajectory (" << RE_SIunits << " MV) exceeds maximum value (1.0 MV)" << G4endl;
+    G4cout << "Electric rigidity of central trajectory (" << RE_SIunits << " MV) exceeds maximum value (25.0 MV)" << G4endl;
     G4cout << "Lower energy by inserting degrader after target" << G4endl;
     flag = true;
   }
@@ -622,8 +630,8 @@ void EMMADetectorConstruction::CalculateScalingFactors()
     G4cout << G4endl;
     G4cout << "*** Simulation aborted ***" << G4endl;
     G4cout << G4endl;
-    //    abort();
-  }
+    abort();
+    }
 
   // scaling factors
   magneticScaling = magneticRigidity/magneticRigidity_0;
