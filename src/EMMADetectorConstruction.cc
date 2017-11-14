@@ -602,30 +602,56 @@ void EMMADetectorConstruction::CalculateScalingFactors()
 
   //G4cout << "(Mass, mom): (" << mc <<", "<< pc << ")" << G4endl;
 
+  ofstream outfile_rigidities;
+  // I don't want to deal with these G4 wrapper types but I don't want to hack around them either...
+  G4String outfile_name = UserDir;
+  outfile_name += "rigidities.dat";
+  outfile_rigidities.open(outfile_name.c_str());
+
+
   G4double RB_SIunits = magneticRigidity * 1./(2.99792458e2);  // T*m	conversion factor = (10^6)/c
   G4double RE_SIunits = electricRigidity * 1e6 / 1000000.;  // MV
   G4cout << G4endl;
   G4cout << "--- Rigidities of central trajectory ---" << G4endl;
   G4cout << "    Magnetic: " << RB_SIunits << " Tm" << G4endl;
   G4cout << "    Electric: " << RE_SIunits << " MV" << G4endl;
+
+  outfile_rigidities << RB_SIunits << endl;
+  outfile_rigidities << RE_SIunits << endl;
+
   if(RB_SIunits>0.848)
+  {
   G4cout << "WARNING: Magnetic rigidity of ion exceeds limit of 0.848 TM, what "
   "EMMA can achieve." << G4endl;
+  outfile_rigidities << "WARNING: Magnetic rigidity of ion exceeds limit of 0.848 TM, what EMMA can achieve." << endl;
+  }
+
   if(RE_SIunits>20)
+  {
   G4cout << "WARNING: Electric rigidity of ion exceeds limit of 20 MV, what "
   "EMMA can achieve." << G4endl;
+  outfile_rigidities << "WARNING: Electric rigidity of ion exceeds limit of 20 MV, what EMMA can achieve." << endl;
+  }
+
   G4cout << G4endl;
   G4bool flag=false;
+
   if (RB_SIunits>1.0) {
     G4cout << "Magnetic rigidity of central trajectory (" << RB_SIunits << " Tm) exceeds maximum value (1.0 Tm)" << G4endl;
     G4cout << "Lower energy by inserting degrader after target" << G4endl;
+    outfile_rigidities << "ERROR: Magnetic rigidity of central trajectory  exceeds maximum value (1.0 Tm). Lower energy by inserting degrader after target " << endl;
     flag = true;
   }
+
   if (RE_SIunits>25.0) {
     G4cout << "Electric rigidity of central trajectory (" << RE_SIunits << " MV) exceeds maximum value (25.0 MV)" << G4endl;
     G4cout << "Lower energy by inserting degrader after target" << G4endl;
+    outfile_rigidities << "ERROR: Electric rigidity of central trajectory  exceeds maximum value (25.0 MV). Lower energy by inserting degrader after target " << endl;
     flag = true;
   }
+
+  outfile_rigidities.close();
+
   if (flag) {
     G4cout << G4endl;
     G4cout << "*** Simulation aborted ***" << G4endl;
