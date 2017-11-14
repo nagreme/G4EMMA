@@ -605,7 +605,7 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   ofstream outfile_rigidities;
   // I don't want to deal with these G4 wrapper types but I don't want to hack around them either...
   G4String outfile_name = UserDir;
-  outfile_name += "rigidities.dat";
+  outfile_name += "Results/rigidities.dat";
   outfile_rigidities.open(outfile_name.c_str());
 
 
