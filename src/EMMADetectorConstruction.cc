@@ -603,7 +603,7 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   //G4cout << "(Mass, mom): (" << mc <<", "<< pc << ")" << G4endl;
 
   ofstream outfile_rigidities;
-  // I don't want to deal with these G4 wrapper types but I don't want to hack around them either...
+  // I sm reluctant to use these G4 wrapper types but I don't want to hack around them...
   G4String outfile_name = UserDir;
   outfile_name += "Results/rigidities.dat";
   outfile_rigidities.open(outfile_name.c_str());
