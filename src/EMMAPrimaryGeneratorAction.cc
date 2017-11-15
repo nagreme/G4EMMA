@@ -357,15 +357,15 @@ void EMMAPrimaryGeneratorAction::initializeReactionSimulation() // called using 
   userCharge = fCharge3; //read in from reaction.dat in EMMAapp
   std::ofstream outfile;
   focalPlaneFileName = UserDir;
-  focalPlaneFileName.append("/Results/fp_reaction.dat"); //Used in EMMADriftChamberHit
+  focalPlaneFileName.append("Results/fp_reaction.dat"); //Used in EMMADriftChamberHit
   outfile.open (focalPlaneFileName);
   outfile.close();
   postTargetFileName = UserDir;
-  postTargetFileName.append("/Results/postTarget_reaction.dat"); //Used in EMMASteppingAction
+  postTargetFileName.append("Results/postTarget_reaction.dat"); //Used in EMMASteppingAction
   outfile.open (postTargetFileName);
   outfile.close();
   postDegrader1FileName = UserDir;
-  postDegrader1FileName.append("/Results/postDegrader1_reaction.dat"); //Used in EMMASteppingAction
+  postDegrader1FileName.append("Results/postDegrader1_reaction.dat"); //Used in EMMASteppingAction
   outfile.open (postDegrader1FileName);
   outfile.close();
 
@@ -402,15 +402,15 @@ void EMMAPrimaryGeneratorAction::initializeBeamSimulation() // called using /myd
   userCharge = beamCharge; //read in from beam.dat in EMMAapp
   std::ofstream outfile;
   focalPlaneFileName = UserDir;
-  focalPlaneFileName.append("/Results/fp_beam.dat"); //Used in EMMADriftChamberHit
+  focalPlaneFileName.append("Results/fp_beam.dat"); //Used in EMMADriftChamberHit
   outfile.open (focalPlaneFileName);
   outfile.close();
   postTargetFileName = UserDir;
-  postTargetFileName.append("/Results/postTarget_beam.dat"); //Used in EMMASteppingAction
+  postTargetFileName.append("Results/postTarget_beam.dat"); //Used in EMMASteppingAction
   outfile.open (postTargetFileName);
   outfile.close();
   postDegrader1FileName = UserDir;
-  postDegrader1FileName.append("/Results/postDegrader1_beam.dat"); //Used in EMMASteppingAction
+  postDegrader1FileName.append("Results/postDegrader1_beam.dat"); //Used in EMMASteppingAction
   outfile.open (postDegrader1FileName);
   outfile.close();
 

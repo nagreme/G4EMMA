@@ -1111,7 +1111,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
     G4bool calcEFL=TRUE; //if false the E and B fields will not be written to file
     if(calcEFL){
       fieldFileName = UserDir;
-      fieldFileName.append("/Results/fringefields/effFieldOpticalAxis.dat"); //Used in EMMAFieldDebugger.cc
+      fieldFileName.append("Results/fringefields/effFieldOpticalAxis.dat"); //Used in EMMAFieldDebugger.cc
       std::ofstream outfile;
       outfile.open (fieldFileName); //open and close to erase contents of file
       outfile.close();
@@ -1149,7 +1149,7 @@ void SpectrometerConstruction::PrintFieldStrength() // for debugging
   // print same info to file
   std::ofstream outfile;
   G4String fname = UserDir;
-  fname.append("/Results/fieldStrengths.dat");
+  fname.append("Results/fieldStrengths.dat");
   outfile.open (fname);
   outfile << "Q1: " << Field1->GetFieldStrength() << " Tm" << G4endl;
   outfile << "Q2: " << Field2->GetFieldStrength() << " Tm" << G4endl;

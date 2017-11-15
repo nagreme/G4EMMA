@@ -73,7 +73,7 @@ EMMAAnalysisManager::EMMAAnalysisManager()
 {
 
   //create root file
-  G4String filename = UserDir + "/Results/GEMMAoutput.root";
+  G4String filename = UserDir + "Results/GEMMAoutput.root";
   rootfile = new TFile(filename,"recreate");
 
   //create root tree
@@ -118,4 +118,3 @@ void EMMAAnalysisManager::dispose()
 }
 
 #endif // G4ANALYSIS_USE
-

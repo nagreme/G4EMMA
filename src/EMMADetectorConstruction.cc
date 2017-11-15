@@ -583,14 +583,6 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   G4double eps = 0.0;
   G4double Qc = centralQ * (1.0 - eps);
 
-  G4cout << centralQ << G4endl;
-  G4cout << eps << G4endl;
-  G4cout << Qc << G4endl;
-  G4cout << keV << G4endl;
-  G4cout << centralZ << G4endl;
-  G4cout << centralA << G4endl;
-
-
   // rigidities of central trajectory
   G4double excitationEnergy = 0.*keV; // keV = 0.001 but what is the point of multiplying by zero???
   G4ParticleDefinition* ic = G4ParticleTable::GetParticleTable()->GetIon(centralZ,centralA,excitationEnergy);
@@ -599,8 +591,6 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   G4double magneticRigidity = pc/Qc;
   G4double vc = pc/(centralE+mc);
   G4double electricRigidity = pc*vc/Qc;
-
-  //G4cout << "(Mass, mom): (" << mc <<", "<< pc << ")" << G4endl;
 
   ofstream outfile_rigidities;
   // I sm reluctant to use these G4 wrapper types but I don't want to hack around them...

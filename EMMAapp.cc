@@ -284,7 +284,7 @@ int main(int argc,char** argv)
   // print same info to file
   std::ofstream outfile;
   G4String fname = UserDir;
-  fname.append("/Results/diagnostics.dat");
+  fname.append("Results/diagnostics.dat");
   outfile.open(fname);
   outfile << "Number of hits:" << G4endl;
   outfile << "Slits 1: " << NOHslits1 << G4endl;
