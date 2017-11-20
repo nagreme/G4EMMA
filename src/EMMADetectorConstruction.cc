@@ -593,7 +593,7 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   G4double electricRigidity = pc*vc/Qc;
 
   ofstream outfile_rigidities;
-  // I sm reluctant to use these G4 wrapper types but I don't want to hack around them...
+  // I am reluctant to use these G4 wrapper types but I don't want to hack around them...
   G4String outfile_name = UserDir;
   outfile_name += "Results/rigidities.dat";
   outfile_rigidities.open(outfile_name.c_str());
@@ -606,8 +606,8 @@ void EMMADetectorConstruction::CalculateScalingFactors()
   G4cout << "    Magnetic: " << RB_SIunits << " Tm" << G4endl;
   G4cout << "    Electric: " << RE_SIunits << " MV" << G4endl;
 
-  outfile_rigidities << RB_SIunits << endl;
-  outfile_rigidities << RE_SIunits << endl;
+  outfile_rigidities << "Magnetic rigidity: " << RB_SIunits << endl;
+  outfile_rigidities << "Electric rigidity: " << RE_SIunits << endl;
 
   if(RB_SIunits>0.848)
   {
