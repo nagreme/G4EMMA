@@ -50,6 +50,11 @@
 #include "EMMAIonChamber.hh"
 #include "EMMAIonChamberHit.hh"
 
+
+#include <stdlib.h>
+#include <unistd.h>
+
+
 using namespace std;
 
 //global variable
@@ -168,6 +173,21 @@ void EMMAEventAction::EndOfEventAction(const G4Event* event)
     DHC2 = (EMMADriftChamberHitsCollection*)(HCE->GetHC(DHC2ID));
   }
 
+  // Send a simulation event message to Django (modification for server)
+  // Nadège Pulgar-Vidal, Nov 2017
+  int ret_code;
+  int pid = fork();
+  if (pid == 0) // child process
+  {
+    ret_code = execlp("python3", "'$DJANGO_MANAGEMENT_PATH'/manage.py", "send_sim_event_msg", UserDir, (char *)0);
+    exit(0);
+  }
+
+  if (ret_code != 0)
+  {
+    cout << "Error sending sim event msg" << endl;
+  }
+
   // Diagnostics
 
   if (verboseLevel==0 || event->GetEventID() % verboseLevel != 0) return;
@@ -224,6 +244,3 @@ void EMMAEventAction::EndOfEventAction(const G4Event* event)
     }
   }
 }
-
-
-
