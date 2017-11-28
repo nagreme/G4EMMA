@@ -53,6 +53,8 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <string.h>
 
 
 using namespace std;
@@ -176,17 +178,29 @@ void EMMAEventAction::EndOfEventAction(const G4Event* event)
   // Send a simulation event message to Django (modification for server)
   // Nadège Pulgar-Vidal, Nov 2017
   int ret_code;
+
   int pid = fork();
   if (pid == 0) // child process
   {
-    ret_code = execlp("python3", "'$DJANGO_MANAGEMENT_PATH'/manage.py", "send_sim_event_msg", UserDir, (char *)0);
+    // Build the cmd, must remove trailing '/' from UserDir
+    string userdir(UserDir.c_str());
+    userdir = userdir.substr(0, userdir.length()-1);
+
+    string manage_cmd(getenv("DJANGO_MANAGEMENT_PATH"));
+    manage_cmd += "/manage.py";
+
+    G4cout << userdir << endl;
+    G4cout << manage_cmd << endl;
+
+    ret_code = execlp("python3", "python3", manage_cmd.c_str(), "send_sim_event_msg", userdir.c_str(), (char*)0);
+    if (ret_code != 0)
+    {
+      G4cout << "Error sending sim event msg" << endl;
+    }
     exit(0);
   }
 
-  if (ret_code != 0)
-  {
-    cout << "Error sending sim event msg" << endl;
-  }
+  wait(NULL);
 
   // Diagnostics
 
