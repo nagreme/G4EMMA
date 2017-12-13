@@ -179,48 +179,33 @@ void EMMAEventAction::EndOfEventAction(const G4Event* event)
   // Nadège Pulgar-Vidal, Nov 2017
   int ret_code;
 
-  ofstream out_file;
-  // I am reluctant to use these G4 wrapper types but I don't want to hack around them...
-  G4String outfile_name = UserDir;
-  outfile_name += "Results/infotest.dat";
-  out_file.open(outfile_name.c_str());
-  out_file << UserDir << endl;
-
   // Remove the path to and the trailing '/' from UserDir
   string userdir(UserDir.c_str());
   int udir_pos = userdir.find("UserDir");
   userdir = userdir.substr(udir_pos, userdir.length()-udir_pos-1);
 
-  out_file << userdir << endl;
+  // Build the cmd
+  string manage_cmd(getenv("DJANGO_MANAGEMENT_PATH"));
+  manage_cmd += "/manage.py";
+
 
   int pid = fork();
   if (pid == 0) // child process
   {
-    // Build the cmd
-
-    string manage_cmd(getenv("DJANGO_MANAGEMENT_PATH"));
-    manage_cmd += "/manage.py";
-
-    G4cout << manage_cmd << endl;
-
-    out_file << manage_cmd << endl;
-
     ret_code = execlp("python3", "python3", manage_cmd.c_str(), "send_sim_event_msg", userdir.c_str(), (char*)0);
     if (ret_code != 0)
     {
       G4cout << "Error sending sim event msg" << endl;
-      out_file << "error" << endl;
     }
     exit(0);
   }
 
+  // effectively, wait for child process to return
+  // this makes the passing of messages more regular and
+  // we don't end up with MANY children ps waiting to run
+  // taking up resources in the background, although it
+  // does slow down the simulation a bit
   wait(NULL);
-
-
-
-
-  out_file << "closing file" << endl;
-  out_file.close();
 
   // Diagnostics
 
