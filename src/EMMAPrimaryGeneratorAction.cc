@@ -85,6 +85,7 @@ EMMAPrimaryGeneratorAction::EMMAPrimaryGeneratorAction()  // constructor
 	G4int n_particle = 1;
 	//G4ParticleGun class generates primary particle(s) with a given momentum and position
 	particleGun  = new G4ParticleGun(n_particle);
+	particleGun2  = new G4ParticleGun(n_particle);
 
 	//create a messenger for this class
 	gunMessenger = new EMMAPrimaryGeneratorMessenger(this);
@@ -137,6 +138,7 @@ EMMAPrimaryGeneratorAction::EMMAPrimaryGeneratorAction()  // constructor
 EMMAPrimaryGeneratorAction::~EMMAPrimaryGeneratorAction()
 {
   delete particleGun;	//must delete G4ParticleGun
+  delete particleGun2;	//must delete G4ParticleGun
   delete gunMessenger;
 }
 
@@ -160,6 +162,7 @@ void EMMAPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
   G4double Ekin;
   G4ParticleDefinition* particleDef;
+  G4ParticleDefinition* particleDef2;
 
 
   // to simulate just an isotropic alpha source
@@ -284,18 +287,21 @@ void EMMAPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   else if (simulateReaction) {
     G4int id=anEvent->GetEventID();
     Ekin = energyBeam[id]; //from initializeReactionSimulation()
+    G4ThreeVector dir(dirxBeam[id],diryBeam[id],dirzBeam[id]);	  
     G4ThreeVector dir2(0,0,0);
     G4double Eejc;
-    G4ThreeVector dir(dirxBeam[id],diryBeam[id],dirzBeam[id]);	  
     if (fZ1==0.) {
       G4cout << "ERROR: Two-body reaction not defined" << G4endl;
       exit (EXIT_FAILURE);
     }
-    simulateTwoBodyReaction( Ekin, dir );
-    G4int Z3=fZ3, A3=fA3;
+    simulateTwoBodyReaction( Ekin, dir, Eejc, dir2 );
+    G4int Z3=fZ3, A3=fA3, Z4=fZ4, A4=fA4;
     G4double Ex = fExcitationEnergy3;
     particleDef = G4ParticleTable::GetParticleTable()->GetIonTable()->GetIon(Z3,A3,Ex);  // Create new ion
+    particleDef2 = G4ParticleTable::GetParticleTable()->GetIonTable()->GetIon(Z4,A4,Ex); 
+
     particleGun->SetParticleDefinition(particleDef);
+    particleGun2->SetParticleDefinition(particleDef2);
 
     particleGun->SetParticleEnergy(Ekin*MeV);
     particleGun2->SetParticleEnergy(Eejc*MeV);
@@ -310,7 +316,10 @@ void EMMAPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	G4cout << "Angle: " << angle2 << G4endl;
 
     particleGun->SetParticleMomentumDirection(dir);
+    particleGun2->SetParticleMomentumDirection(dir2);
+
     particleGun->SetParticleCharge(userCharge);
+
     G4double x=posxBeam[id]*mm, y=posyBeam[id]*mm, z=poszBeam[id]*mm;
     G4double dz=depth/2.;
     z = z-dz; // correction needed because target placement refers to center of target ...
