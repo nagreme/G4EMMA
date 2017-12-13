@@ -2,10 +2,10 @@
 
 # Prepare beam
 #---------------------------------------------------------------
-/mydet/beamZ 38
-/mydet/beamA 84
-/mydet/beamCharge 25
-/mydet/energy 164 MeV
+/mydet/beamZ 17	
+/mydet/beamA 34
+/mydet/beamCharge 15
+/mydet/energy 136 MeV
 /mydet/sigmaEnergy 0.01         # beam-energy resolution (sigma) in percent of beam energy
 /mydet/Angle 0.0 deg   	  	# beam angle sampled uniformly between 0 and theta=sigmaAngle
 /mydet/beamSpotDiameter 1.0 mm
@@ -15,27 +15,27 @@
 # Add nuclear-reaction process: 
 # (Z1,A1)+(Z2,A2)->(Z3,A3)+(Z4,A4)
 #-----------------------------------------
-#/twoBodyReaction/Z1 37         
-#/twoBodyReaction/A1 83         
-#/twoBodyReaction/Z2 1        
-#/twoBodyReaction/A2 2         
-#/twoBodyReaction/Z3 11         
-#/twoBodyReaction/A3 84         
-#/twoBodyReaction/Z4 0        
-#/twoBodyReaction/A4 0         
-#/twoBodyReaction/qmin 0.0   # minimum scattering angle in C.M. (deg)         
-#/twoBodyReaction/qmax 180.0   # maximum ...	   
-#/twoBodyReaction/Charge3 10   # charge state of fragment 3        
+/twoBodyReaction/Z1 17         
+/twoBodyReaction/A1 34         
+/twoBodyReaction/Z2 1        
+/twoBodyReaction/A2 2         
+/twoBodyReaction/Z3 17         
+/twoBodyReaction/A3 35         
+/twoBodyReaction/Z4 1        
+/twoBodyReaction/A4 1         
+/twoBodyReaction/qmin 0.0   # minimum scattering angle in C.M. (deg)         
+/twoBodyReaction/qmax 180.0   # maximum ...	   
+/twoBodyReaction/Charge3 17   # charge state of fragment 3        
 #-----------------------------------------
 
 
 
 # Specify central trajectory
 #----------------------------
-/mydet/centralZ 38
-/mydet/centralA 84
-/mydet/centralQ 25
-/mydet/centralE 163.0
+/mydet/centralZ 18
+/mydet/centralA 35
+/mydet/centralQ 16
+/mydet/centralE 130.0
 /mydet/updategeo           # necessary for changes to take effect
 #----------------------------
 
@@ -56,5 +56,6 @@
 /mydet/doBeam
 #/mydet/doReaction
 #-----------------------
+
 
 #-----------------------------------------

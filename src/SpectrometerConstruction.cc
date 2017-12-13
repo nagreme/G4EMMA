@@ -24,6 +24,7 @@
 #include "G4VPhysicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4ProductionCutsTable.hh"
+#include "G4SubtractionSolid.hh"
 
 #include "EMMAGlobalField.hh"
 #include "EMFieldDebugger.hh"
@@ -128,11 +129,11 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 						   G4double Pipe1length)
 :fCheckOverlaps(true)
 {
-  // If you don't care about checking overlaps of G4VPhysicalVolume uncomment following
-  fCheckOverlaps=false;
+  	// If you don't care about checking overlaps of G4VPhysicalVolume uncomment following
+  	fCheckOverlaps=false;
 
-  // read user input for Slits
-  ReadUserInput();
+  	// read user input for Slits
+  	ReadUserInput();
 
   // Slit half thicknesses
   slitshth = 1*mm; //arbitrary thickness
@@ -248,7 +249,6 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* Q1WallSolid = new G4Tubs("Q1WallTub",Q1apt,Q1apt+wallThick,Q1HL,0*deg,360*deg);
 	G4LogicalVolume* Q1WallLogical = new G4LogicalVolume(Q1WallSolid,Wall,"Q1WallLogical",0,0,0);
 	G4double Q1z = Pipe1z+Pipe1HL+Q1HL;
-	G4cout << "Q1z: " << Q1z << G4endl;
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Q1z),Q1WallLogical,"Q1WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q1WallLogical->SetVisAttributes(PoleVisAtt);
 
@@ -283,6 +283,25 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Q1Solidz),Q1Logical,"Q1Physical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q1Logical->SetVisAttributes(BendingVisAtt);
 
+	 //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+  	//
+  	//                                                 Aperture
+ 	//
+  	//    Aperture (aluminum)
+  	//
+  	G4VSolid* apertureOuterSolid = new G4Box("apertureOuterSolid",5*cm,5*cm,1.*um); // arbitrarily thin.
+  	G4VSolid* apertureHole = new G4Box("apertureHole",4.185*cm,4.185*cm,1.*cm); // arbitrarily thick.
+  	G4SubtractionSolid* apertureSolid = new G4SubtractionSolid("apertureSolid", apertureOuterSolid, apertureHole, 0, G4ThreeVector(0,0,0));
+  	G4LogicalVolume* apertureLogical = new G4LogicalVolume(apertureSolid,Wall,"apertureLogical",0,0,0); // make out of gold for now, will later have to declare aluminium.
+  	G4double zAperture = -43.95*mm;
+  	//new G4PVPlacement(0,G4ThreeVector(0.,0.,zAperture),apertureLogical,"aperturePhys",Q1Logical,0,0,fCheckOverlaps);  
+  	G4cout << "Aperture Location: " << Q1Solidz + zAperture << G4endl;
+  	//
+ 	//<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
 	// Pipe3
 	G4VSolid* Pipe3Solid = new G4Tubs("Pipe3Tub",0*cm,Q1apt,Pipe2HL,0*deg,360*deg);
 	// Pipe3Wall
@@ -299,7 +318,6 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* Q2WallSolid = new G4Tubs("Q2WallTub",Q2apt,Q2apt+wallThick,Q2HL,0*deg,360*deg);
 	G4LogicalVolume* Q2WallLogical = new G4LogicalVolume(Q2WallSolid,Wall,"Q2WallLogical",0,0,0);
 	G4double Q2z = Pipe3z+Pipe2HL+Q2HL;
-	G4cout << "Q2z: " << Q2z << G4endl;
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Q2z),Q2WallLogical,"Q2WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q2WallLogical->SetVisAttributes(PoleVisAtt);
 
@@ -335,8 +353,8 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	new G4PVPlacement(Rotate0,G4ThreeVector(0*cm,0*cm,Q2Solidz),Q2Logical,"Q2Physical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q2Logical->SetVisAttributes(BendingVisAtt);
 
-    //used in EMFieldDebugger.cc
-    zQ2fieldends = Pipe4z + Pipe4HL;
+    	//used in EMFieldDebugger.cc
+    	zQ2fieldends = Pipe4z + Pipe4HL;
 
  	// Pipe5
 	G4VSolid* Pipe5Solid = new G4Tubs("Pipe5Tub",0*cm,Q2apt,Pipe5HL,0*deg,360*deg);
@@ -358,6 +376,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4double EDendx = -(x0-x0*cos(ED1angle));	//central x distance at end of ED1
 	// same values apply to ED2!
 
+	G4cout << "ED1 center: " << ED1z << endl;
 
 	//
 	//  G4Tubs Member Data:
@@ -389,10 +408,10 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* ED1Wall4Solid = new G4Tubs("ED1Wall4Tub", x0-EDhw, x0+EDhw, wallThick/2.0, 360*deg, ED1angle);
 	G4LogicalVolume* ED1Wall4Logical = new G4LogicalVolume(ED1Wall4Solid,Wall,"ED1Wall4Logical", 0,0,0);
 	new G4PVPlacement(RotateTube,G4ThreeVector(-x0, -(EDhh+wallThick/2.0), ED1z), ED1Wall4Logical,"ED1Wall4Physical",SpecWorldLogical,0,0,fCheckOverlaps);
-    ED1Wall1Logical->SetVisAttributes(BendingVisAtt);
-    ED1Wall2Logical->SetVisAttributes(BendingVisAtt);
-    ED1Wall3Logical->SetVisAttributes(BendingVisAtt);
-    ED1Wall4Logical->SetVisAttributes(BendingVisAtt);
+    	ED1Wall1Logical->SetVisAttributes(BendingVisAtt);
+    	ED1Wall2Logical->SetVisAttributes(BendingVisAtt);
+    	ED1Wall3Logical->SetVisAttributes(BendingVisAtt);
+    	ED1Wall4Logical->SetVisAttributes(BendingVisAtt);
 
 	// Create rotation matrix
 	G4RotationMatrix* Rotate1 = new G4RotationMatrix();
@@ -405,9 +424,9 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4double slitshx,slitshy;
 	G4ThreeVector displace,posED1slit,posED1slit2;
 
-    posED1slit[0]=EDendx;
-    posED1slit[1]=0;
-    posED1slit[2]=Pipe5z+Pipe5HL+EDendz;
+    	posED1slit[0]=EDendx;
+    	posED1slit[1]=0;
+    	posED1slit[2]=Pipe5z+Pipe5HL+EDendz;
 
 	slitshx=slitshout;
 	slitshy=yapth+slitshout*2;
@@ -472,10 +491,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	posPipe7[0] = posSlits1[0]-2*slitshth*sin(Pipe6angle)-(Pipe7HL-2*slitshth)*sin(Pipe6angle);
 	posPipe7[1] = 0*cm;
 	posPipe7[2] = posSlits1[2]+2*slitshth*cos(Pipe6angle)+(Pipe7HL-2*slitshth)*cos(Pipe6angle);
-
 	G4cout << "PopPipe7 (x,z) : (" << posPipe7[0] << ", " << posPipe7[2] << ")" << G4endl;
-
-
 	// *********************************************** //
 	// Positioning of rectangular aperture slit before MD:
 	G4ThreeVector posslit1MD;
@@ -533,8 +549,6 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	posPipe8[0] = posslit2MD[0]+slitshth*sin(Pipe6angle)+(Pipe8HL-2*slitshth)*sin(Pipe6angle);
 	posPipe8[1] = 0*cm;
 	posPipe8[2] = posslit2MD[2]+slitshth*cos(Pipe6angle)+(Pipe8HL-2*slitshth)*cos(Pipe6angle);
-
-	G4cout << "posPipe8 (x,z): (" << posPipe8[0] << ", " << posPipe8[2] << ") " << G4endl;
 
 	// *********************************************** //
 	// Positioning of front of (not middle) slits2:
@@ -613,9 +627,9 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	// Create Field for ED1
 	zED1fieldbegins = Pipe5z - Pipe5HL;
 	G4cout << "ED1 curve begins: " << Pipe5z + Pipe5HL << G4endl;
-    ED1before=Pipe5HL*2;
-    ED1after=Pipe6HL*2;
-
+    	ED1before=Pipe5HL*2;
+    	ED1after=Pipe6HL*2;
+    
 	G4LogicalVolume* ED1Logical = new G4LogicalVolume(ED1Union,Vacuum,"ED1Logical");
 
 	Field3 = new BGField3(0,zED1fieldbegins,ED1before,ED1after,ED1Logical,G4ThreeVector(0*cm,0*cm,Pipe5z)); //see BGField3.cc for description of input parameters
@@ -627,9 +641,9 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 
 
-    //used in EMFieldDebugger.cc
-    xED1fieldends =  posPipe6[0] - Pipe6HL*sin(Pipe6angle);
-    zED1fieldends =  posPipe6[2] + Pipe6HL*cos(Pipe6angle);
+    	//used in EMFieldDebugger.cc
+    	xED1fieldends =  posPipe6[0] - Pipe6HL*sin(Pipe6angle);
+    	zED1fieldends =  posPipe6[2] + Pipe6HL*cos(Pipe6angle);
 
 	// <><><><><><><><><><><><><><><><><><><><><><><><><><><>
 	//	     Build SLITS 1 at Pipe6-Pipe7 boundary
@@ -710,10 +724,10 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* MDWall4Solid = new G4Tubs("MDWall4Tub",MDr-MDhw,MDr+MDhw,wallThick/2,160*deg,MDangle);
 	G4LogicalVolume* MDWall4Logical = new G4LogicalVolume(MDWall4Solid,Wall,"MDWall4Logical", 0,0,0);
 	new G4PVPlacement(RotateTube,G4ThreeVector(xMD,-(MDhh+wallThick/2.0),zMD),MDWall4Logical,"MDWall4Physical",SpecWorldLogical,0,0,fCheckOverlaps);
-    MDWall1Logical->SetVisAttributes(BendingVisAtt);
-    MDWall2Logical->SetVisAttributes(BendingVisAtt);
-    MDWall3Logical->SetVisAttributes(BendingVisAtt);
-    MDWall4Logical->SetVisAttributes(BendingVisAtt);
+    	MDWall1Logical->SetVisAttributes(BendingVisAtt);
+    	MDWall2Logical->SetVisAttributes(BendingVisAtt);
+    	MDWall3Logical->SetVisAttributes(BendingVisAtt);
+    	MDWall4Logical->SetVisAttributes(BendingVisAtt);
 
 	G4RotationMatrix* Rotate2 = new G4RotationMatrix();
 	Rotate2->rotateY(-20*deg);
@@ -733,10 +747,10 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4UnionSolid* MDUnion = new G4UnionSolid("MD", MDa, Pipe2MDSolid, RotateMD, Pipe2MDoff);
 
 	// Create Field for MD
-    xMDfieldbegins = posPipe1MD[0] + Pipe1MDHL*sin(Pipe6angle);
-    zMDfieldbegins = posPipe1MD[2] - Pipe1MDHL*cos(Pipe6angle);
-    MDbefore=Pipe1MDHL*2;
-    MDafter=Pipe2MDHL*2;
+    	xMDfieldbegins = posPipe1MD[0] + Pipe1MDHL*sin(Pipe6angle);
+    	zMDfieldbegins = posPipe1MD[2] - Pipe1MDHL*cos(Pipe6angle);
+    	MDbefore=Pipe1MDHL*2;
+    	MDafter=Pipe2MDHL*2;
 
 	G4LogicalVolume* MDLogical = new G4LogicalVolume(MDUnion,Vacuum,"MDLogical");
 
@@ -749,7 +763,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 	//used in EMFieldDebugger.cc
 	xMDfieldends = posPipe2MD[0] + Pipe2MDHL*sin(Pipe6angle);
-    zMDfieldends = posPipe2MD[2] + Pipe2MDHL*cos(Pipe6angle);
+    	zMDfieldends = posPipe2MD[2] + Pipe2MDHL*cos(Pipe6angle);
 
 	// Rectangular aperture slit after MD
 	xapth = 20.5/2*cm;
@@ -862,10 +876,10 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* ED2Wall4Solid = new G4Tubs("ED2Wall4Tub", x0-EDhw, x0+EDhw, wallThick/2.0, 340*deg, ED1angle);
 	G4LogicalVolume* ED2Wall4Logical = new G4LogicalVolume(ED2Wall4Solid,Wall,"ED2Wall4Logical", 0,0,0);
 	new G4PVPlacement(RotateTube,G4ThreeVector(-x0, -(EDhh+wallThick/2.0), ED2z), ED2Wall4Logical,"ED2Wall4Physical",SpecWorldLogical,0,0,fCheckOverlaps);
-    ED2Wall1Logical->SetVisAttributes(BendingVisAtt);
-    ED2Wall2Logical->SetVisAttributes(BendingVisAtt);
-    ED2Wall3Logical->SetVisAttributes(BendingVisAtt);
-    ED2Wall4Logical->SetVisAttributes(BendingVisAtt);
+    	ED2Wall1Logical->SetVisAttributes(BendingVisAtt);
+    	ED2Wall2Logical->SetVisAttributes(BendingVisAtt);
+    	ED2Wall3Logical->SetVisAttributes(BendingVisAtt);
+    	ED2Wall4Logical->SetVisAttributes(BendingVisAtt);
 
 
 	// Create rotation matrix
@@ -891,8 +905,8 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	// Create Field for ED2
 	xED2fieldbegins = posPipe9[0] - Pipe9HL*sin(Pipe6angle);
 	zED2fieldbegins = posPipe9[2] - Pipe9HL*cos(Pipe6angle);
-    ED2before=Pipe9HL*2;
-    ED2after=Pipe10HL*2;
+    	ED2before=Pipe9HL*2;
+    	ED2after=Pipe10HL*2;
 
 	G4LogicalVolume* ED2Logical = new G4LogicalVolume(ED2Union,Vacuum,"ED2Logical");
 
@@ -939,7 +953,6 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* Q3WallSolid = new G4Tubs("Q3WallTub",Q3apt,Q3apt+wallThick,Q3HL,0*deg,360*deg);
 	G4LogicalVolume* Q3WallLogical = new G4LogicalVolume(Q3WallSolid,Wall,"Q3WallLogical",0,0,0);
 	G4double Q3z = Q3apt1z+Q3apt1HL+Q3HL;
-	G4cout << "Q3z: " << Q3z << G4endl;
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Q3z),Q3WallLogical,"Q3WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q3WallLogical->SetVisAttributes(PoleVisAtt);
 
@@ -953,8 +966,8 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 	//Create Union for field element
 	zQ3fieldbegins = Pipe11z - Pipe11HL;
-    Q3before=Pipe11HL*2+Q3apt1HL*2;
-    Q3after=Q3apt2HL*2;
+    	Q3before=Pipe11HL*2+Q3apt1HL*2;
+    	Q3after=Q3apt2HL*2;
 
 	G4ThreeVector Q3off(0*cm,0,Pipe11HL+Q3apt1HL);
 	G4UnionSolid* Q3ap = new G4UnionSolid("Q3ap", Pipe11Solid, Q3apt1Solid, Rotate3, Q3off);
@@ -980,7 +993,6 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	G4VSolid* Q4WallSolid = new G4Tubs("Q4WallTub",Q4apt,Q4apt+wallThick,Q4HL,0*deg,360*deg);
 	G4LogicalVolume* Q4WallLogical = new G4LogicalVolume(Q4WallSolid,Wall,"Q4WallLogical",0,0,0);
 	G4double Q4z = Q3apt2z+Q3apt2HL+Q4HL;
-	G4cout << "Q4z: " << Q4z << G4endl;
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Q4z),Q4WallLogical,"Q4WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 	Q4WallLogical->SetVisAttributes(PoleVisAtt);
 
@@ -1003,9 +1015,9 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 	//Create Union for field element
 	zQ4fieldbegins = Q4z - Q4HL;
-    Q4before=0;
-    Q4after=Pipe12HL*2;
-
+    	Q4before=0;
+    	Q4after=Pipe12HL*2;
+    
 	G4ThreeVector Q4off(0*cm,0,Q4HL+Pipe12HL);
 	G4UnionSolid* Q4Union = new G4UnionSolid("Q4", Q4Solid, Pipe12Solid, Rotate3, Q4off);
 	// Create Field for Q4
@@ -1019,8 +1031,8 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 	Field7 = new BGField7(0,zQ4fieldbegins,Q4before,Q4after,Q4Logical,G4ThreeVector(0*cm,0*cm,Q4z)); //see BGField7.cc for description of input parameters
 
-    //used in EMFieldDebugger.cc
-    zQ4fieldends = Pipe12z+Pipe12HL; //z location at end of field (field extends beyond width of element)
+    	//used in EMFieldDebugger.cc
+    	zQ4fieldends = Pipe12z+Pipe12HL; //z location at end of field (field extends beyond width of element)
 
 	// <><><><><><><><><><><><><><><><><><><><><><><><><><><>
 	//	     Build right SLIT 3 after Pipe12
@@ -1079,14 +1091,12 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 	new G4PVPlacement(Rotate3,G4ThreeVector(0*cm,0*cm,Pipe14z),Pipe14WallLogical,"Pipe14WallPhysical",SpecWorldLogical,0,0,fCheckOverlaps);
 
 //------------------------------------------------------------------------------------------//
-    // Used in EMMADetectorConstruction.cc
+    	// Used in EMMADetectorConstruction.cc
 	zQ1begins = Pipe1length; //Distance to beginning of Q1
 	zQ4ends = Q4z + Q4HL; //Distance to end of Q4
 	zAnode = posSlits4[2] + slitshth + (66.4)*mm; //Pipe14z+(Pipe14HL-slitshth); // Distance to focal plane (Anode)4
 	//zFocalPlane = Pipe14z+(Pipe14HL-sliefltshth);
 	zFocalPlane = zQ4ends + 307.6*mm;
-        G4cout << "FocalPlane: " << zFocalPlane << G4endl;
-	G4cout << "Anode: " << zAnode << G4endl;
 
 //------------------------------------------------------------------------------------------//
     // Use in EMMASteppingAction.cc and EMFieldDebugger.cc for diagnostic purposes
@@ -1108,7 +1118,7 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
 
 
     //Calculate E and B fields and write it to file
-    G4bool calcEFL=TRUE; //if false the E and B fields will not be written to file
+    G4bool calcEFL=FALSE; //if false the E and B fields will not be written to file
     if(calcEFL){
       fieldFileName = UserDir;
       fieldFileName.append("Results/fringefields/effFieldOpticalAxis.dat"); //Used in EMMAFieldDebugger.cc
@@ -1117,13 +1127,13 @@ SpectrometerConstruction::SpectrometerConstruction(G4Material* Vacuum, G4Materia
       outfile.close();
 
       //0=Q1, 1=Q2, 2=ED1, 3=MD, 4=ED2, 5=Q3, 6=Q4, 7=custom
-      //to calculate fields inside all elements
+      //to calculate fields inside all elements uncomment for loop.
       //for(G4int i=7;i<10;i++){
-        //EMFieldDebugger* EMdebug = new EMFieldDebugger(i); //writes field strengths at different positions to file
-       //}
+        //EMFieldDebugger* EMdebug = new EMFieldDebugger(i); // writes field strengths at different positions to file
+        //}
       //to calculate field inside one element
-      EMFieldDebugger* EMdebug = new EMFieldDebugger(0);
-      //exit(0); //comment if you want to program to terminate after writing the fields to file
+      //EMFieldDebugger* EMdebug = new EMFieldDebugger(2);
+      //exit(0); // uncomment if you want to program to terminate after writing the fields to file
     }
 //------------------------------------------------------------------------------------------//
 
@@ -1339,7 +1349,3 @@ void SpectrometerConstruction::buildSlitSingle( G4LogicalVolume* SpecWorldLogica
   }
 
 }
-
-
-
-

@@ -8,3 +8,4 @@ html/*
 include/html/*
 *.o
 G4EMMA-build/*
+**/*~
