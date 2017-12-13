@@ -44,7 +44,6 @@ file(GLOB headers "${PROJECT_SOURCE_DIR}/include/[^.]*.hh")
 
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
-
 find_library(F2C_LIBRARIES libf2c.a) #must be static library for some reason
 message(STATUS "Lib file detected: [${F2C_LIBRARIES}].")
 add_executable(EMMAapp EMMAapp.cc ${sources} ${headers})

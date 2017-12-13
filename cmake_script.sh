@@ -16,3 +16,4 @@ cmake -DGeant4_DIR=$GEANT4_DIR .
 
 #Assumes you have a quad core processor
 make -j4
+

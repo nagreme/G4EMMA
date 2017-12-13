@@ -3,9 +3,10 @@ Makefile
 CMakeCache.txt
 CmakeFiles
 cmake_install.cmake
-UserDir/Results
-UserDir/BeamSampling
+UserDir*/Results
+UserDir*/BeamSampling
 html/*
 include/html/*
 *.o
 G4EMMA-build/*
+**/*~
